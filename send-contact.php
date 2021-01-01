@@ -60,8 +60,8 @@
 				print '<p style="text-align:center; padding: 10px; background-color: #d7d6d6;border-radius: 5px;">We recieved your question. We will answer within 24 hours.</p>';
 				$EmailHeaders  = "MIME-Version: 1.0\r\n";
 				$EmailHeaders .= "Content-type: text/html; charset=utf-8\r\n";
-				$EmailHeaders .= "From: <alen@tvz.hr>\r\n";
-				$EmailHeaders .= "Reply-To:<alen@eburza.hr>\r\n";
+				$EmailHeaders .= "From: <vedranmihalic96@gmail.com>\r\n";
+				$EmailHeaders .= "Reply-To:<vedranmihalic96@gmail.com>\r\n";
 				$EmailHeaders .= "X-Mailer: PHP/".phpversion();
 				$EmailSubject = 'Example page - Contact Form';
 				$EmailBody  = '
