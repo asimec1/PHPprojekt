@@ -1,4 +1,5 @@
 <?php 
+
 	# Stop Hacking attempt
 	define('__APP__', TRUE);
 	
@@ -51,7 +52,7 @@ print '
 		<meta name="twitter:title" content="Hello Example">
 		<meta name="twitter:description" content="Some description">
 		
-        <meta name="author" content="alen@tvz.hr">
+        <meta name="author" content=" vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -63,6 +64,7 @@ print '
 		<!-- End Google Fonts -->
 		<title>Example page - HTML5</title>
 	</head>
+	
 <body>
 	<header>
 		<div'; if ($menu > 1) { print ' class="hero-subimage"'; } else { print ' class="hero-image"'; }  print '></div>
@@ -75,7 +77,9 @@ print '
 			print $_SESSION['message'];
 			unset($_SESSION['message']);
 		}
-	
+
+		
+
 	# Homepage
 	if (!isset($menu) || $menu == 1) { include("home.php"); }
 	

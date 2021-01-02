@@ -12,9 +12,6 @@
 	<p>He also created the first web browser and editor. The world\'s first website, http://info.cern.ch, was launched on 6 August 1991. It explained the World Wide Web concept and gave users an introduction to getting started with their own websites.</p>
 	<p>In 1994, Berners Lee founded the World Wide Web Consortium at the Laboratory of Computer Science (LCS) at the Massachusetts Institute of Technology in Boston. He has served as director of the consortium since then. He also works as a senior research scientist at LCS which has now become the Computer Science and Artificial Intelligence Laboratory.</p>
 	<p>Source: <a href="http://www.bbc.co.uk/history/historic_figures/berners_lee_tim.shtml" target="_blank">BBC</a></p>
-	<p>Social media:<br>
-		<a href="https://www.linkedin.com/in/tim-berners-lee-b41808ab/" target="_blank"><img src="img/linkedin.svg" alt="Linkedin" title="Linkedin" style="width:24px; margin-top:0.4em"></a>
-		<a href="https://twitter.com/timberners_lee" target="_blank"><img src="img/twitter.svg" alt="Twitter" title="Twitter" style="width:24px; margin-top:0.4em"></a>
-		<a href="https://plus.google.com/113372414904624897851" target="_blank"><img src="img/google+.svg" alt="Google+" title="Google+" style="width:24px; margin-top:0.4em"></a>
+	
 	</p>';
 ?>

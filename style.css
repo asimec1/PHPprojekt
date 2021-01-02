@@ -8,20 +8,20 @@ header {
 	width: 100%;
 }
 .hero-image {
-	background-image: url("img/banner-php.jpg");
+	background-image: url("img/news.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	height: 500px;
+	height: 600px;
 }
 .hero-subimage {
-	background-image: url("img/banner-php.jpg");
+	background-image: url("img/news.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	height: 200px;
+	height: 300px;
 }
 ul {
 	list-style-type: none;
@@ -55,11 +55,11 @@ main {
 	margin: 2em;
 }
 main a {
-	color: #27318b;
+	color: #199b5e;
 	text-decoration: none;
 }
 main a:hover {
-	color: #8b3727;
+	color: #2bdfd6;
 	text-decoration: underline;
 }
 p {
@@ -68,7 +68,7 @@ p {
 	letter-spacing: 1px;
 }
 small {
-	color: red;
+	color: rgb(112, 151, 21);
 }
 .news img {
 	width: 12%;
@@ -79,7 +79,7 @@ small {
 .news h2 {
 	margin: 0.5em 0;
 	font-size: 1.5em;
-	color: #27318b;
+	color: #0745cc;
 }
 .news hr {
 	margin: 1em 0;
@@ -268,7 +268,7 @@ footer p {
 	color: black;
 }
 #admin li a:hover {
-	background-color: #c8a5a5;
+	background-color: #3336d8;
 }
 @media screen and (max-width: 700px) {
 	figure {
