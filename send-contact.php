@@ -28,7 +28,7 @@
 		<meta name="twitter:title" content="Hello Example">
 		<meta name="twitter:description" content="Some description">
 		
-        <meta name="author" content="alen@tvz.hr">
+        <meta name="author" content="vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>

@@ -2,7 +2,7 @@
 	print '
 	<h1>HTML5 - A vocabulary and associated APIs for HTML and XHTML</h1>
 	<figure>
-		<img src="img/html5.jpg" alt="HTML5" title="HTML5">
+		<img src="img/news2.jpg" alt="News" title="News">
 		<figcaption>Sir Timothy John Berners-Lee OM KBE FRS FREng FRSA FBCS (<time datetime="1955-06-08">born 8 June 1955</time>), also known as TimBL, is an English engineer and computer scientist, best known as the inventor of the World Wide Web.</figcaption>
 	</figure>
 	<p>Berners Lee is a British computer scientist who invented the World Wide Web.</p>
