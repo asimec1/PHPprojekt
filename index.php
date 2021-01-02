@@ -41,7 +41,7 @@ print '
 		</nav>
 	</header>
 	<main>
-		<h1>Dobrodošli na stranicu za pračenje cijena goriva</h1>
+		<h1>Dobrodošli na stranicu za praćenje cijena goriva</h1>
 		<figure>
 			<img src="img/fuel.jpg" alt="News" title="News">
 			<figcaption>Ovdje možete pronaći aktualne cijene goriva.</figcaption>
