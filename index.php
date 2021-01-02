@@ -1,5 +1,4 @@
 <?php 
-
 	# Stop Hacking attempt
 	define('__APP__', TRUE);
 	
@@ -23,7 +22,25 @@
 	
 print '
 <!DOCTYPE html>
-<html>
+
+<body>
+	<header>
+	<html>
+	<header>
+	<div class="hero-image"></div>
+	<nav>
+		<ul>
+		  <li><a href="index.php">Home</a></li>
+		  <li><a href="news.php">News</a></li>
+		  <li><a href="contact.php">Contact</a></li>
+		  <li><a href="about-us.php">About</a></li>
+		  <li><a href="register.php">Register</a></li>
+		  <li><a href="signin.php">Sign In</a></li>
+		  
+		</ul>
+		</nav>
+	</header>
+	<html>
 	<head>
 		
 		<!-- CSS -->
@@ -64,42 +81,12 @@ print '
 		<!-- End Google Fonts -->
 		<title>Example page - HTML5</title>
 	</head>
-	
-<body>
-	<header>
-		<div'; if ($menu > 1) { print ' class="hero-subimage"'; } else { print ' class="hero-image"'; }  print '></div>
-		<nav>';
-			include("menu.php");
-		print '</nav>
-	</header>
 	<main>';
 		if (isset($_SESSION['message'])) {
 			print $_SESSION['message'];
 			unset($_SESSION['message']);
 		}
 
-		
-
-	# Homepage
-	if (!isset($menu) || $menu == 1) { include("home.php"); }
-	
-	# News
-	else if ($menu == 2) { include("news.php"); }
-	
-	# Contact
-	else if ($menu == 3) { include("contact.php"); }
-	
-	# About us
-	else if ($menu == 4) { include("about-us.php"); }
-	
-	# Register
-	else if ($menu == 5) { include("register.php"); }
-	
-	# Signin
-	else if ($menu == 6) { include("signin.php"); }
-	
-	# Admin webpage
-	else if ($menu == 7) { include("admin.php"); }
 	
 	print '
 	</main>
