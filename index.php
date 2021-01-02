@@ -30,26 +30,24 @@ print '
 	<div class="hero-image"></div>
 	<nav>
 		<ul>
-		  <li><a href="index.php">Home</a></li>
-		  <li><a href="news.php">News</a></li>
-		  <li><a href="contact.php">Contact</a></li>
-		  <li><a href="about-us.php">About</a></li>
-		  <li><a href="register.php">Register</a></li>
-		  <li><a href="signin.php">Sign In</a></li>
+		  <li><a href="index.php">Početna</a></li>
+		  <li><a href="news.php">Novosti</a></li>
+		  <li><a href="contact.php">Kontakt</a></li>
+		  <li><a href="about-us.php">O nama</a></li>
+		  <li><a href="register.php">Registracija</a></li>
+		  <li><a href="signin.php">Prijava</a></li>
 		  
 		</ul>
 		</nav>
 	</header>
 	<main>
-		<h1>Dobrodošli na stranicu za najnovije vjesti</h1>
+		<h1>Dobrodošli na stranicu za pračenje cijena goriva</h1>
 		<figure>
-			<img src="img/news2.jpg" alt="News" title="News">
-			<figcaption>Sir Timothy John Berners-Lee OM KBE FRS FREng FRSA FBCS (<time datetime="1955-06-08">born 8 June 1955</time>), also known as TimBL, is an English engineer and computer scientist, best known as the inventor of the World Wide Web.</figcaption>
+			<img src="img/fuel.jpg" alt="News" title="News">
+			<figcaption>Ovdje možete pronaći aktualne cijene goriva.</figcaption>
 		</figure>
-		<p>Berners Lee is a British computer scientist who invented the World Wide Web.</p>
-		<p>Timothy John Berners Lee was born on 8 June 1955 and grew up in London. He studied physics at Oxford University and became a software engineer.</p>
-		<p>In 1994, Berners Lee founded the World Wide Web Consortium at the Laboratory of Computer Science (LCS) at the Massachusetts Institute of Technology in Boston. He has served as director of the consortium since then. He also works as a senior research scientist at LCS which has now become the Computer Science and Artificial Intelligence Laboratory.</p>
-		<p>Source: <a href="http://www.bbc.co.uk/history/historic_figures/berners_lee_tim.shtml" target="_blank">BBC</a></p>
+		
+		
 		
 	</main>
 </body>
@@ -92,7 +90,15 @@ print '
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
 		<!-- End Google Fonts -->
 		<title>Stranica za novosti</title>
-		<p>Social media:<br>
+		
+	<h3>Aktualne cijene</h3>
+	<p>Eurosuper 95 9,09kn</p>
+	<p>Eurosuper 100 9,74kn</p>
+	<p>Eurodizel 8,86kn</p>
+	<p>Autoplin 4,67kn</p>
+	<p>Lož ulje 3,96kn</p>
+	<p>Plavi dizel 4,18kn</p>
+	<p>Social media:<br>
 		<a href="https://www.linkedin.com/in/tim-berners-lee-b41808ab/" target="_blank"><img src="img/linkedin.svg" alt="Linkedin" title="Linkedin" style="width:24px; margin-top:0.4em"></a>
 		<a href="https://twitter.com/timberners_lee" target="_blank"><img src="img/twitter.svg" alt="Twitter" title="Twitter" style="width:24px; margin-top:0.4em"></a>
 		<a href="https://plus.google.com/113372414904624897851" target="_blank"><img src="img/google+.svg" alt="Google+" title="Google+" style="width:24px; margin-top:0.4em"></a>

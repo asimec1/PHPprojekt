@@ -1,11 +1,11 @@
 <?php 
 	print '
 	<h1>About Us</h1>
+	
 	<h2>The year open data went worldwide</h2>
-	<video width="50%" controls poster="img/video-cover-sir-tim-berners-lee.jpg" >
-	  <source src="video/TimBernersLee_2010U-320k.mp4" type="video/mp4">
-	  Your browser does not support HTML5 video.
-	</video>
+	<a href="https://www.youtube.com/watch?v=KUeiFq5k_Tg&ab_channel=AlJazeeraBalkans"</a>
+	
+	 
 	<p>He is the Director of the World Wide Web Consortium (W3C), a Web standards organization founded in 1994 which develops interoperable technologies (specifications, guidelines, software, and tools) to lead the Web to its full potential. He is a Director of the World Wide Web Foundation which was launched in 2009 to coordinate efforts to further the potential of the Web to benefit humanity.</p>
 	<p>A graduate of Oxford University, Sir Tim invented the Web while at CERN, the European Particle Physics Laboratory, in 1989. He wrote the first web client and server in 1990. His specifications of URIs, HTTP and HTML were refined as Web technology spread.</p>
 	<p>He is the 3Com Founders Professor of Engineering in the School of Engineering with a joint appointment in the Department of Electrical Engineering and Computer Science at the Laboratory for Computer Science and Artificial Intelligence ( CSAIL) at the Massachusetts Institute of Technology (MIT) where he co-leads the Decentralized Information Group (DIG). He is also a Professor in the Computer Science Department at the University of Oxford, UK. He is President of and founded the Open Data Institute in London.</p>

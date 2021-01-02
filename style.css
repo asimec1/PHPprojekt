@@ -8,15 +8,15 @@ header {
 	width: 100%;
 }
 .hero-image {
-	background-image: url("img/news.jpg");
+	background-image: url("img/gorivo.jpeg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	height: 600px;
+	height: 500px;
 }
 .hero-subimage {
-	background-image: url("img/news.jpg");
+	background-image: url("img/gorivo.jpeg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
