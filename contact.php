@@ -30,8 +30,8 @@
 		
         <meta name="author" content="vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
-		<link rel="icon" href="icon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="icon.ico" type="image/x-icon"/>
+		<link rel="icon" href="img/icon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon"/>
 		<!-- end favicon meta -->
 		<!-- end meta elements -->
 		
@@ -60,7 +60,7 @@
 	<main>
 		<h1>Kontakt</h1>
 		<div id="contact">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.7890741539636!2d15.966758816056517!3d45.795453279106205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68b5d094979%3A0xda8bfa8459b67560!2sUl.+Vrbik+VIII%2C+10000%2C+Zagreb!5e0!3m2!1shr!2shr!4v1509296660756" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?data=!3m1!4b1!4m5!3m4!1s0x4765d1a04ce79879:0x49324c2c60c96c2c!8m2!3d45.8114366!4d15.8738055" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 			
 				<label for="fname">Ime *</label>
 				<input type="text" id="fname" name="firstname" placeholder="Vaše ime.." required>
@@ -88,7 +88,7 @@
 		</div>
 	</main>
 	<footer>
-		<p>Copyright &copy; 2021. Vedran Mihalić</p>
+	<p>Copyright &copy; 2021 Vedran Mihalić. <a href="https://github.com/Vedran96?tab=repositories"><img src="img/GitHub-Mark-Light-32px.png" title="Github" alt="Github"></a></p>
 	</footer>
 </body>
 </html>

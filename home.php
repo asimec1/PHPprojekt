@@ -1,5 +1,6 @@
 <?php 
 	print '
+	
 	<h1>Stranica za praćenje cijena goriva</h1>
 	<figure>
 		<img src="img/fuel.jpg" alt="Fuel" title="Fuel">

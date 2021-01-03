@@ -32,8 +32,8 @@
 		
         <meta name="author" content="vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="img/icon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon"/>
 		<!-- end favicon meta -->
 		<!-- end meta elements -->
 		

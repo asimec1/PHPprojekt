@@ -80,10 +80,10 @@ print '
 		<meta name="twitter:title" content="Hello Example">
 		<meta name="twitter:description" content="Some description">
 		
-        <meta name="author" content=" vedranmihalic96@gmail.com">
+		<meta name="author" content="vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
-		<link rel="icon" href="icon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="icon.ico" type="image/x-icon"/>
+		<link rel="icon" href="img/icon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon"/>
 		<!-- end favicon meta -->
 		<!-- end meta elements -->
 		
@@ -105,9 +105,7 @@ print '
 		<a href="https://plus.google.com/113372414904624897851" target="_blank"><img src="img/google+.svg" alt="Google+" title="Google+" style="width:24px; margin-top:0.4em"></a>
 	</p>
 </main>
-<footer>
-		<p>Copyright &copy; 2021 Vedran Mihalić. <a href="https://github.com/Vedran96?tab=repositories"><img src="img/GitHub-Mark-Light-32px.png" title="Github" alt="Github"></a></p>
-	</footer>
+
 </body>
 </html>
 	<main>';
@@ -119,7 +117,9 @@ print '
 	
 	print '
 	</main>
-	
+	<footer>
+		<p>Copyright &copy; 2021 Vedran Mihalić. <a href="https://github.com/Vedran96?tab=repositories"><img src="img/GitHub-Mark-Light-32px.png" title="Github" alt="Github"></a></p>
+	</footer>
 </body>
 </html>';
 ?>
