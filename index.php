@@ -20,6 +20,7 @@
 	# Classes & Functions
     include_once("functions.php");
 	
+
 print '
 <!DOCTYPE html>
 
@@ -90,7 +91,7 @@ print '
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
 		<!-- End Google Fonts -->
 		<title>Stranica za novosti</title>
-		
+	
 	<h3>Aktualne cijene</h3>
 	<p>Eurosuper 95 9,09kn</p>
 	<p>Eurosuper 100 9,74kn</p>
@@ -104,6 +105,9 @@ print '
 		<a href="https://plus.google.com/113372414904624897851" target="_blank"><img src="img/google+.svg" alt="Google+" title="Google+" style="width:24px; margin-top:0.4em"></a>
 	</p>
 </main>
+<footer>
+		<p>Copyright &copy; 2021 Vedran Mihalić. <a href="https://github.com/Vedran96?tab=repositories"><img src="img/GitHub-Mark-Light-32px.png" title="Github" alt="Github"></a></p>
+	</footer>
 </body>
 </html>
 	<main>';
