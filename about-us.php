@@ -30,7 +30,7 @@
 		<meta name="twitter:title" content="Hello Example">
 		<meta name="twitter:description" content="Some description">
 		
-        <meta name="author" content="alen@tvz.hr">
+        <meta name="author" content="vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -40,7 +40,7 @@
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
 		<!-- End Google Fonts -->
-		<title>Example page - About Us</title>
+		<title>O nama</title>
 	</head>
 <body>
 	<header>
