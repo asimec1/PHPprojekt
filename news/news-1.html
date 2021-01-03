@@ -1,0 +1,441 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="hr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"a2923691f4",applicationID:"266621853"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"a2923691f4","applicationID":"266621853","transactionName":"blJabRRQW0FYBxBaX1cYfkwIUkFbVgpLV1pYWV9WOUJGQBcDBV9cXEVRXBUfQ1tcExcJd1hbVFwUSGNbXBNKVFVN","queueTime":0,"applicationTime":41,"agent":""}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    
+        
+
+<link rel="preload" href="/static/fonts/TazWt09-BlackItalic.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/TazWt09-Black.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/TazWt07-Bold.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/TazWt05-Regular.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/LabGrotesque-Regular.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/LabGrotesque-Bold.woff2?22122020" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/icomoon.woff2?22122020" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/static/style/fonts.css" media="print" onload="this.media='all'; this.onload=null;">
+
+        
+
+
+
+
+
+
+
+
+
+<meta name="google-site-verification" content="zBB30vbTOf991ohALL2Rf99hGbeds6zh23RqHOBodBY" />
+
+<style>
+    @charset "utf-8";
+
+    @viewport {
+        initial-scale: 1;
+        zoom: 1;
+        width: device-width;
+        min-zoom: 0.2;
+        max-zoom: 5;
+        user-zoom: zoom;
+    }
+    
+        
+            
+            .is-section-news .card__label:not(.is-prominent){background-color:#d22328!important}.block:not(:last-child){margin-bottom:1.5rem}.image.is-3by2 img{bottom:0;left:0;position:absolute;right:0;top:0}img{height:auto;max-width:100%}html{background-color:#fff;font-size:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}figure,header,section{display:block}body{font-family:TazRegular,system,sans-serif}body{color:#4f4f4f;font-size:1em;font-weight:400;line-height:1.5}a{color:#007fff;text-decoration:none}img{height:auto;max-width:100%}span{font-style:inherit;font-weight:inherit}.is-marginless{margin:0!important}.icon{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:1.5rem;width:1.5rem}.icon.is-small{height:1rem;width:1rem}.image{display:block;position:relative}.image img{display:block;height:auto;width:100%}.image.is-3by2 img{height:100%;width:100%}.image.is-3by2{padding-top:66.6666%}.level-item{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-preferred-size:auto;flex-basis:auto;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:0;flex-shrink:0;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@media screen and (max-width:1023px){.level-item:not(:last-child){margin-bottom:.75rem}}.column{display:block;-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;padding:8px}@media screen and (max-width:1023px){.column.is-narrow-mobile{-webkit-box-flex:0;-ms-flex:none;flex:none}}@media screen and (max-width:1023px){.column.is-narrow-touch{-webkit-box-flex:0;-ms-flex:none;flex:none}}.columns{margin-left:-8px;margin-right:-8px;margin-top:-8px}.columns:not(:last-child){margin-bottom:calc(1.5rem - 8px)}.section{padding:3rem 1.5rem 3rem 16px}.icon{-webkit-touch-callout:none}body{color:#000}.section{padding:0}@media (max-width:1023px){.columns{margin:0!important}}@media (max-width:1023px){.column{padding:0!important}}.is-section-news .card__label:not(.is-prominent){background-color:#d22328!important}body,figure,h2,html,iframe,p{margin:0;padding:0}h2{font-size:100%;font-weight:400}html{-webkit-box-sizing:border-box;box-sizing:border-box}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}img{height:auto;max-width:100%}iframe{border:0}[class*=" icon-"]{font-family:icomoon;speak:none;font-weight:400;font-style:normal;font-variant:normal;line-height:1;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-notifications:before{content:"\e922"}.icon-profile:before{content:"\e923"}.icon-ugc:before{content:"\e924"}.icon-like:before{content:"\e935"}.icon-search:before{content:"\e941"}.dfp_banner{min-height:1px}.dfp_banner,.dfp_banner [id^=google_ads_iframe]{text-align:center}.dfp_banner [id$=__container__]{display:inline-block;margin:0 0 20px}.header_mobile{position:fixed;top:0;z-index:105;width:100%;max-width:414px;height:48px;line-height:0;background-color:#fff}.header_mobile__top{position:relative;z-index:2;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.16);box-shadow:0 1px 0 0 rgba(0,0,0,.16);background-color:#fff}.header_mobile__top .level-item{-webkit-box-flex:1;-ms-flex:1 1 0px;flex:1 1 0}.header_mobile__link{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:40px;height:40px;text-align:center;color:rgba(0,0,0,.64)}.header_mobile__link .icon_wrap{line-height:0}.header_mobile__label{display:none;font:normal 400 100% TazBold,sans-serif;font-size:.5625rem;line-height:.625rem;color:#d7060c;white-space:nowrap;text-transform:uppercase}.header_mobile__logo{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-flex:0!important;-ms-flex:0 0 52px!important;flex:0 0 52px!important}.header_mobile__logo_link{display:block;padding:5px 0 5px 5px}.header_mobile__logo_img{display:block;width:47px}.header_mobile .icon{font-size:1.5rem;line-height:1.5rem}.header_mobile .hamburger_menu{position:relative;width:20px;height:20px}.header_mobile .hamburger_menu__item{position:absolute;display:block;width:100%;height:2px;border-radius:4px;background-color:#5c5c5c}.header_mobile .hamburger_menu__item:first-of-type{top:15%}.header_mobile .hamburger_menu__item:nth-of-type(2){top:45%}.header_mobile .hamburger_menu__item:nth-of-type(3){top:75%}.card{position:relative;display:block;margin-bottom:16px;border-bottom:6px solid #ebebeb}.card__figure{z-index:1;width:100%;height:auto;margin:0;line-height:0}.card__content,.card__figure{position:relative;display:block;font-size:0}.card__content{z-index:2}.card__label{display:-webkit-inline-box;-ms-flex-item-align:start;align-self:flex-start;overflow:hidden;height:auto;max-height:18px;padding:0 4px;font:normal 400 100% TazBold,sans-serif;font-size:.875rem;line-height:1.125rem;color:#fff;letter-spacing:.04688rem;text-transform:uppercase;background-color:#d7060c;-webkit-line-clamp:1;-webkit-box-orient:vertical}.card__title{display:-webkit-box;overflow:hidden;height:auto;font:normal 400 100% TazBlack,sans-serif;font-size:1.5rem;line-height:1.5625rem;color:#000;letter-spacing:.025rem;max-height:1.5625rem;-webkit-line-clamp:1;-webkit-box-orient:vertical}.card__lead{display:-webkit-box;overflow:hidden;margin-top:6px;font:normal 400 100% TazRegular,sans-serif;font-size:.9375rem;line-height:1.125rem;color:#000;letter-spacing:0;-webkit-line-clamp:5;-webkit-box-orient:vertical;max-height:5.625rem}.card:after{display:block;height:6px;background-color:#e6e6e6}.card .engagement_bar__meta_wrap{margin-top:2px}.card.is-A{padding:0}.card.is-A .card__title{width:288px;margin:6px 0 0;font-size:1.3125rem;line-height:1.375rem;letter-spacing:.02438rem;-webkit-line-clamp:3;max-height:4.125rem}@media screen and (min-width:360px){.card.is-A .card__title{width:328px;font-size:1.5rem;line-height:1.5625rem;letter-spacing:.0275rem;max-height:4.6875rem}}@media screen and (min-width:375px){.card.is-A .card__title{width:343px;font-size:1.56875rem;line-height:1.625rem;letter-spacing:.02875rem;max-height:4.875rem}}@media screen and (min-width:411px){.card.is-A .card__title{width:379px;font-size:1.73313rem;line-height:1.8125rem;letter-spacing:.03188rem;max-height:5.4375rem}}.card.is-A .card__content{margin-top:-18px;padding:0 16px}.card.is-A .card__lead{display:-webkit-box}@media screen and (max-width:1023px){.card.is-A .engagement_bar__meta_wrap{margin-right:16px;margin-left:16px}}.card.is-A .card__title{margin:6px 0 0}@media screen and (max-width:1023px){section.section:first-of-type>section:first-of-type .column:first-of-type>.card:first-child{margin-top:16px}}@media screen and (max-width:1023px){section.section:first-of-type>section:first-of-type .column:first-of-type>.card:first-child.is-A{margin-top:0}}.article__image_wrap .has-3-images img:first-child{-ms-grid-row:1;-ms-grid-row-span:3;-ms-grid-column:1;grid-area:a}.article__image_wrap .has-3-images img:nth-child(2){-ms-grid-row:1;-ms-grid-column:3;grid-area:b}.article__image_wrap .has-3-images img:nth-child(3){-ms-grid-row:3;-ms-grid-column:3;grid-area:c}.pieces_widget{padding:14px 16px 18px 16px;background-color:#f5f5f5}.pieces_widget__content{display:-webkit-box;display:-ms-flexbox;display:flex}.pieces_widget--Covid{padding:0;background-color:unset}@media screen and (max-width:1023px){.pieces_widget--Covid{margin-bottom:16px}}.pieces_widget--Covid .piece{width:100%}.engagement_bar__meta{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;height:48px;border-bottom:6px solid #ebebeb;-webkit-box-shadow:none;box-shadow:none}.card .engagement_bar__meta{height:42px}.card .engagement_bar__meta{border-bottom:0}.engagement_bar__meta_item{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1 1 33.33%;flex:1 1 33.33%;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.engagement_bar__meta_item .icon{margin-right:4px;font-size:1.5rem}.engagement_bar__meta_item .icon.is-small{position:relative;width:20px;height:20px;margin-right:-4px}.engagement_bar__meta_item .icon.is-small:first-of-type{z-index:3}.engagement_bar__meta_item .icon.is-small:nth-of-type(2){z-index:2}.engagement_bar__meta_item .icon.is-small:nth-of-type(3){z-index:1}.engagement_bar__meta_item .icon_wrap{height:24px}.engagement_bar__meta_item_wrap{width:100%;height:100%}.engagement_bar__meta_item>div>span,.engagement_bar__meta_item_wrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.engagement_bar__meta_item>div>span{line-height:.9375rem}.engagement_bar__meta_item--count,.engagement_bar__meta_item>div>span{margin-left:4px;font:normal 400 100% TazRegular,sans-serif;font-size:.8125rem;color:rgba(0,0,0,.64)}.engagement_bar__meta_item--count{line-height:1rem}.has-reactions .engagement_bar__meta_item--reaction{-webkit-box-flex:1;-ms-flex:1 1 50%;flex:1 1 50%}.section{background-color:#fff}.section--article .dfp_banner--rectangle_top [id$=__container__]{margin:20px auto 0}.breaking_ticker{position:relative;margin:16px auto}.breaking_ticker__link{color:#000}.breaking_ticker__content{display:block;width:288px;margin:0 auto;font:normal 400 100% TazBlack,sans-serif;font-size:.96937rem;line-height:1.0625rem;letter-spacing:.0175rem;text-align:center}@media screen and (min-width:360px){.breaking_ticker__content{width:328px;font-size:1.11563rem;line-height:1.25rem;letter-spacing:.02063rem}}@media screen and (min-width:375px){.breaking_ticker__content{width:343px;font-size:1.18437rem;line-height:1.3125rem;letter-spacing:.02187rem}}@media screen and (min-width:411px){.breaking_ticker__content{width:379px;font-size:1.34937rem;line-height:1.4375rem;letter-spacing:.025rem}}img:-moz-broken{opacity:0}img{position:relative}img:after{content:" ";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#fff}@media screen and (max-width:1023px){body{background-color:#fafafa;left:0;right:0}}.card img{width:100%;font-size:0;line-height:0}figure{width:100%;margin:0;font-size:0;line-height:0}.site_wrap{position:relative;max-width:414px;min-height:100vh;margin:0 auto;padding:48px 0 0;-webkit-box-shadow:0 0 8px 0 rgba(0,0,0,.1);box-shadow:0 0 8px 0 rgba(0,0,0,.1);background-color:#fff}.site_wrap .columns{margin:0}.site_wrap .column:not(.is-sidebar){padding:0!important}.site_wrap .article .dfp_banner{margin-bottom:20px}.is-shadowless{-webkit-box-shadow:none!important;box-shadow:none!important}
+        
+    
+</style>
+
+
+
+    
+    
+    
+        <link rel="stylesheet" href="/dist/css/app.45686fcf.css">
+    
+
+    
+    
+        <link rel="stylesheet" href="/dist/css/vendors-initial.5207722b.css">
+    
+
+    
+    
+    
+        <link rel="prefetch" href="/dist/js/vendors-async.41cab281.js">
+    
+
+
+
+<script type="text/javascript">window.gdprAppliesGlobally=true;(function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)}
+else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return}
+var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}}
+if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator");(function(e){
+  var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("49e2dd21-509f-4e31-9f4e-34808af3cb36")})();</script>
+
+<!-- generic -->
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+<!-- generics -->
+<link rel="icon" href="/static/favicons/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/static/favicons/favicon-128.png" sizes="128x128">
+<link rel="icon" href="/static/favicons/favicon-192.png" sizes="192x192">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="196x196" href="/static/favicons/favicon-196.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="/static/favicons/favicon-152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="/static/favicons/favicon-180.png" sizes="180x180">
+
+<!-- Windows 8.1 + IE11 and above -->
+<meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
+
+
+    <link rel="manifest" href="/dist/manifest.json" crossorigin="use-credentials">
+
+
+<script src="/static/vendors/iframeResizer.min.js" async></script>
+<script src="https://cdn.midas-network.com/Common/GetUserIdAsync/769" async></script>
+
+    
+
+    
+    
+    
+        <title>Galerija slika - Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe! | 24sata</title>
+        <meta name="keywords" content="cijena goriva, benzin, nafta, gorivo, dizel, autoplin, cijene">
+        <meta name="decription" content="Porasle su cijene bezina, dizela i autoplina. Dizel je tako poskupio za 12 lipa, benzin za 22 lipe, a autoplin za 13 lipa. Prosječni spremnik od 50 litara benzina skuplji za 10,5 kuna, a dizela za šest">
+    
+
+
+    
+
+    
+        
+<!-- Google Tag Manager -->
+<script>
+    
+</script>
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PCRFFK6');
+</script>
+
+
+    <script async="async" id="googletagservices_gpt_script" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+
+<script type="text/javascript">
+    var yieldlove_prevent_autostart = true;
+    var yieldlove_cmd = yieldlove_cmd || [];
+</script>
+
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+</script>
+
+<script type="text/javascript">
+
+    
+
+</script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-98786130-1', 'auto', 'G360' );
+</script>
+
+
+    
+
+    
+    <link rel="canonical" href="https://www.24sata.hr/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139" />
+
+
+    
+    
+        
+        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.share.min.css?bust=20200809">
+        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.ads.min.css?bust=20200809">
+        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.dist.min.css?bust=20200809">
+        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.cust.min.css?bust=20200809">
+
+        
+        <link rel="prefetch" as="script" href="//code.jquery.com/jquery-3.3.1.min.js?bust=20200809" crossorigin="anonymous"></link>
+        <link rel="prefetch" as="script" href="//imasdk.googleapis.com/js/sdkloader/ima3.js?bust=20200809" crossorigin="anonymous"></link>
+
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-consts.min.js?bust=20200809"></link>
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-dist.min.js?bust=20200809"></link>
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-dist.hr.min.js?bust=20200809"></link>
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-cust.min.js?bust=20200809"></link>
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-share.min.js?bust=20200809"></link>
+        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-share.hr.min.js?bust=20200809"></link>
+    
+
+</head>
+<body>
+
+    <!-- *** Start VueJS APP *** -->
+    
+        
+            <noscript>
+    <header>
+        
+    </header>
+</noscript>
+
+        
+
+        
+    
+    <script id="galleryDataScript">
+        <!--
+            window.galleryData = {"data": {"type": "gallery", "id": "564812", "attributes": {"title": "Opet skuplje gorivo: Spremnik benzina skuplji za 10,5 kuna...", "description": "", "comments_enabled": false, "show_thumbnails": true, "show_more_galleries": true, "item_count": 1, "resource_url": "/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139", "is_embedded": null}, "relationships": {"cover_image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "items": {"data": [{"type": "gallery-item", "id": "4388786", "attributes": {"content_type": "image", "content_id": 1657526, "title": "", "description": ""}, "relationships": {"image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "video": {"data": null}}}], "meta": {"count": 1}}, "content_object": {"data": {"type": "content_object", "id": "616139"}}}}, "included": [{"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}, {"type": "gallery-item", "id": "4388786", "attributes": {"content_type": "image", "content_id": 1657526, "title": "", "description": ""}, "relationships": {"image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "video": {"data": null}}}, {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}]};
+        //-->
+    </script>
+
+
+    <div id="app"></div>
+
+    
+        
+            <!-- Schema Markup - organization -->
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Organization",
+        "url": "https://www.24sata.hr",
+        "name": "24sata.hr",
+        "logo": {
+        "@type" : "ImageObject",
+        "url" : "https://www.24sata.hr/static/logo_24.png"
+        },
+        "sameAs": [
+            "https://www.facebook.com/24sata/",
+            "https://twitter.com/24sata_HR",
+            "https://www.youtube.com/channel/UCpJNsBEupVtlLlVIYw-kFpg"
+        ]
+    }
+</script>
+
+
+<!-- Schema Markup - webpage -->
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "WebPage",
+        "name": "Galerija slika - Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!",
+        "publisher": {
+            "@type": "Organization",
+            "name": "24sata.hr",
+            "url" : "https://www.24sata.hr",
+            "logo": {
+                "@type" : "ImageObject",
+                "url" : "https://www.24sata.hr/static/logo_24.png"
+            },
+            "sameAs": [
+                "https://www.facebook.com/24sata/",
+                "https://twitter.com/24sata_HR",
+                "https://www.youtube.com/channel/UCpJNsBEupVtlLlVIYw-kFpg"
+            ]
+        },
+        "url": "https://www.24sata.hr"
+    }
+</script>
+
+<!-- Schema Markup - website -->
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "WebSite",
+        "url": "https://www.24sata.hr",
+        "name": "24sata.hr"
+    }
+</script>
+
+            
+            
+
+<!-- Schema Markup - gallery -->
+<script type="application/ld+json">
+{
+    "@context":"http://schema.org",
+    "@type":"ImageGallery",
+    "description":"Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!",
+    "keywords":"cijena goriva, benzin, nafta, gorivo, dizel, autoplin, cijene",
+    "associatedMedia": [
+    
+        
+            
+            {
+                "@type":"ImageObject",
+                "contentUrl": "https://img.24sata.hr/gt9LRTgjVc76dudmDifV0no3RO4=/1600x1065/smart/media/images/2019-08/pxl_260219_23725792.jpg",
+                
+                "caption" : "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL",
+                
+                "uploadDate": "2019-02-26T10:35:53.332718+01:00"
+            }
+        
+    
+    ]
+}
+</script>
+
+        
+    
+
+    <noscript>
+    
+        <h1>Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!</h1>
+        <a href="https://www.24sata.hr/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139">Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!</a>
+        
+            
+                
+                <img src="https://img.24sata.hr/gt9LRTgjVc76dudmDifV0no3RO4=/1600x1065/smart/media/images/2019-08/pxl_260219_23725792.jpg" alt="Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!">
+            
+        
+        </noscript>
+    
+
+
+        
+            
+        
+
+        
+
+            
+                
+                
+                
+                
+                    <script type="module" src="/dist/js/vendors-initial.b8defe7b.js"></script>
+                
+
+                
+                
+                    <script type="module" src="/dist/js/app.994194f2.js"></script>
+                
+
+                
+                
+                    <script type="text/javascript" src="/dist/js/vendors-initial-legacy.0b45d981.js" nomodule></script>
+                
+
+                
+                
+                    <script type="text/javascript" src="/dist/js/app-legacy.0f576419.js" nomodule></script>
+                
+            
+
+        
+    
+    <!-- *** End VueJS APP *** -->
+
+    
+        
+        
+            <script>
+                var gert_config = {
+                    HOST: "https://gert.sds.rocks",
+                    SITE: "24SATA",
+                    ARTICLE_READ_TIMEOUT: 10,
+                    POST_EVENTS_INTERVAL: 10,
+                    GET_OBJECTS_INTERVAL: 10,
+                    GET_OBJECTS_NUM: 15,
+                    OBJECT_DAYS_TIMEDELTA: 5
+                };
+                
+                    var gert_events_script = gert_config.HOST.concat("/events.js?t=").concat(new Date().getTime()).concat("?");
+                
+                (function (w,d,s,h,g,c) {
+                    w[g] = {CONFIG: c};
+                    var el = d.createElement(s);var t = d.getElementsByTagName(s)[0];el.async = 1;el.src = h;t.parentNode.insertBefore(el, t)
+                })(window, document, 'scr'+'ipt', gert_events_script, '_gert', gert_config);
+            </script>
+        
+    
+
+
+    <!-- *** Start test for ios zoom *** -->
+    <script>
+    (function iosZommHack () {
+        /*
+            NOTE: This code overrides the viewport settings, an improvement would be
+            to take the original value and only add or change the user-scalable value
+        */
+
+        // optionally only activate for iOS (done because I havn't tested the effect under other OS/devices combinations such as Android)
+        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
+        if (iOS) preventZoomOnFocus ();
+
+
+        function preventZoomOnFocus () {
+            document.documentElement.addEventListener("touchstart", onTouchStart);
+            document.documentElement.addEventListener("focusin", onFocusIn);
+        }
+
+        var dont_disable_for = ["checkbox", "radio", "file", "button", "image", "submit", "reset", "hidden"];
+
+        function onTouchStart(evt) {
+            var tn = evt.target.tagName;
+
+            // No need to do anything if the initial target isn't a known element
+            // which will cause a zoom upon receiving focus
+            if (tn != "SELECT" &&  tn != "TEXTAREA" && (tn != "INPUT" || dont_disable_for.indexOf(evt.target.getAttribute("type")) > -1) ) return;
+
+            // disable zoom
+            setViewport("width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0");
+        }
+
+        // NOTE: for now assuming this focusIn is caused by user interaction
+        function onFocusIn(evt) {
+            // reenable zoom
+            setViewport("width=device-width, initial-scale=1.0, maximum-scale=5.0");
+        }
+
+        // add or update the <meta name="viewport"> element
+        function setViewport(newvalue) {
+            var vpnode = document.documentElement.querySelector('head meta[name="viewport"]');
+            if (vpnode) {
+                vpnode.setAttribute("content",newvalue);
+            } else {
+                vpnode = document.createElement("meta");
+                vpnode.setAttribute("name", "viewport");
+                vpnode.setAttribute("content", newvalue);
+            }
+        }})()
+    </script>
+    <!-- *** End test for ios zoom *** -->
+
+    
+</body>
+</html>

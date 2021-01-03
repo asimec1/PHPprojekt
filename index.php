@@ -32,7 +32,7 @@ print '
 	<nav>
 		<ul>
 		  <li><a href="index.php">Početna</a></li>
-		  <li><a href="news.php">Novosti</a></li>
+		  <li><a href="news.html">Novosti</a></li>
 		  <li><a href="contact.php">Kontakt</a></li>
 		  <li><a href="about-us.php">O nama</a></li>
 		  <li><a href="register.php">Registracija</a></li>
@@ -82,15 +82,15 @@ print '
 		
         <meta name="author" content=" vedranmihalic96@gmail.com">
 		<!-- favicon meta -->
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="icon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="icon.ico" type="image/x-icon"/>
 		<!-- end favicon meta -->
 		<!-- end meta elements -->
 		
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
 		<!-- End Google Fonts -->
-		<title>Stranica za novosti</title>
+		<title>Praćenje cijene goriva</title>
 	
 	<h3>Aktualne cijene</h3>
 	<p>Eurosuper 95 9,09kn</p>
