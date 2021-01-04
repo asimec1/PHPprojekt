@@ -60,6 +60,8 @@
 		</nav>
 	</header>
 	<h1>O nama</h1>
+
+	<h2>Kretanje cijena goriva u regiji</h2>
 	<video width="50%" controls poster="video/video-slika.png" >
 		  <source src="video/cijena_goriva.mp4" type="video/mp4">
 		  Your browser does not support HTML5 video.
