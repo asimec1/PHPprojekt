@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country`, `date`, `archive`) VALUES
-(13, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'Vedran96', '$argon2i$v=19$m=65536,t=4,p=1$eFhzYVAycUFRcGhQSE9MMg$JdzWWSAxtQjgFlujlmG2pTWR4ROm7tWgxfoBK1xXrrA', 'HR','2020-11-21 17:12:47','2020-11-28 14:06:45', 'Y')
+(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'Vedran96', '$argon2i$v=19$m=65536,t=4,p=1$eFhzYVAycUFRcGhQSE9MMg$JdzWWSAxtQjgFlujlmG2pTWR4ROm7tWgxfoBK1xXrrA', 'HR','2020-11-21 17:12:47','2020-11-28 14:06:45', 'Y')
 
 --
 -- Indexes for dumped tables
