@@ -60,10 +60,19 @@
 		</nav>
 	</header>
 	<h1>O nama</h1>
-	
+	<video width="50%" controls poster="video/video-slika.png" >
+		  <source src="video/cijena_goriva.mp4" type="video/mp4">
+		  Your browser does not support HTML5 video.
+		</video>
 	 
 	<p>Mi smo stranica koja se bavi prikupljanjem cijene goriva na Hrvatskom tržištu</p>
 	<p>Osnovani smo 2.1.2021. U Zagrebu</p>
 	
-	<p>Video courtesy of <a href="https://www.youtube.com/watch?v=KUeiFq5k_Tg&ab_channel=AlJazeeraBalkans" target="_blank">gorivo</a></p>';
+	
+	</main>
+	<footer>
+		<p>Copyright &copy; 2021 Vedran Mihalić. <a href="https://github.com/Vedran96?tab=repositories"><img src="img/GitHub-Mark-Light-32px.png" title="Github" alt="Github"></a></p>
+	</footer>
+</body>
+</html>';
 ?>
