@@ -137,7 +137,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #333dd6;
 }
 footer {
 	background-color: #333;
@@ -145,12 +145,12 @@ footer {
 	clear: both;
 }
 footer p {
-	color: white;
+	color: rgb(26, 221, 68);
 	text-align: center;
 	margin: 0.5em;
 }
 footer {
-	background-color: #333;
+	background-color: rgb(9, 247, 108);
 	padding: 0.1em;
 	clear: both;
 }
