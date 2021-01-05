@@ -1,441 +1,1951 @@
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
-
-<html lang="hr">
+<html lang="hr" id="top">
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"a2923691f4",applicationID:"266621853"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"a2923691f4","applicationID":"266621853","transactionName":"blJabRRQW0FYBxBaX1cYfkwIUkFbVgpLV1pYWV9WOUJGQBcDBV9cXEVRXBUfQ1tcExcJd1hbVFwUSGNbXBNKVFVN","queueTime":0,"applicationTime":41,"agent":""}</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-    
-        
-
-<link rel="preload" href="/static/fonts/TazWt09-BlackItalic.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/TazWt09-Black.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/TazWt07-Bold.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/TazWt05-Regular.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/LabGrotesque-Regular.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/LabGrotesque-Bold.woff2?22122020" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/icomoon.woff2?22122020" as="font" type="font/woff2" crossorigin>
-
-<link rel="stylesheet" href="/static/style/fonts.css" media="print" onload="this.media='all'; this.onload=null;">
-
-        
-
-
-
-
-
-
-
-
-
-<meta name="google-site-verification" content="zBB30vbTOf991ohALL2Rf99hGbeds6zh23RqHOBodBY" />
-
-<style>
-    @charset "utf-8";
-
-    @viewport {
-        initial-scale: 1;
-        zoom: 1;
-        width: device-width;
-        min-zoom: 0.2;
-        max-zoom: 5;
-        user-zoom: zoom;
-    }
-    
-        
-            
-            .is-section-news .card__label:not(.is-prominent){background-color:#d22328!important}.block:not(:last-child){margin-bottom:1.5rem}.image.is-3by2 img{bottom:0;left:0;position:absolute;right:0;top:0}img{height:auto;max-width:100%}html{background-color:#fff;font-size:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}figure,header,section{display:block}body{font-family:TazRegular,system,sans-serif}body{color:#4f4f4f;font-size:1em;font-weight:400;line-height:1.5}a{color:#007fff;text-decoration:none}img{height:auto;max-width:100%}span{font-style:inherit;font-weight:inherit}.is-marginless{margin:0!important}.icon{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:1.5rem;width:1.5rem}.icon.is-small{height:1rem;width:1rem}.image{display:block;position:relative}.image img{display:block;height:auto;width:100%}.image.is-3by2 img{height:100%;width:100%}.image.is-3by2{padding-top:66.6666%}.level-item{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-preferred-size:auto;flex-basis:auto;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:0;flex-shrink:0;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}@media screen and (max-width:1023px){.level-item:not(:last-child){margin-bottom:.75rem}}.column{display:block;-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;padding:8px}@media screen and (max-width:1023px){.column.is-narrow-mobile{-webkit-box-flex:0;-ms-flex:none;flex:none}}@media screen and (max-width:1023px){.column.is-narrow-touch{-webkit-box-flex:0;-ms-flex:none;flex:none}}.columns{margin-left:-8px;margin-right:-8px;margin-top:-8px}.columns:not(:last-child){margin-bottom:calc(1.5rem - 8px)}.section{padding:3rem 1.5rem 3rem 16px}.icon{-webkit-touch-callout:none}body{color:#000}.section{padding:0}@media (max-width:1023px){.columns{margin:0!important}}@media (max-width:1023px){.column{padding:0!important}}.is-section-news .card__label:not(.is-prominent){background-color:#d22328!important}body,figure,h2,html,iframe,p{margin:0;padding:0}h2{font-size:100%;font-weight:400}html{-webkit-box-sizing:border-box;box-sizing:border-box}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}img{height:auto;max-width:100%}iframe{border:0}[class*=" icon-"]{font-family:icomoon;speak:none;font-weight:400;font-style:normal;font-variant:normal;line-height:1;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-notifications:before{content:"\e922"}.icon-profile:before{content:"\e923"}.icon-ugc:before{content:"\e924"}.icon-like:before{content:"\e935"}.icon-search:before{content:"\e941"}.dfp_banner{min-height:1px}.dfp_banner,.dfp_banner [id^=google_ads_iframe]{text-align:center}.dfp_banner [id$=__container__]{display:inline-block;margin:0 0 20px}.header_mobile{position:fixed;top:0;z-index:105;width:100%;max-width:414px;height:48px;line-height:0;background-color:#fff}.header_mobile__top{position:relative;z-index:2;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.16);box-shadow:0 1px 0 0 rgba(0,0,0,.16);background-color:#fff}.header_mobile__top .level-item{-webkit-box-flex:1;-ms-flex:1 1 0px;flex:1 1 0}.header_mobile__link{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:40px;height:40px;text-align:center;color:rgba(0,0,0,.64)}.header_mobile__link .icon_wrap{line-height:0}.header_mobile__label{display:none;font:normal 400 100% TazBold,sans-serif;font-size:.5625rem;line-height:.625rem;color:#d7060c;white-space:nowrap;text-transform:uppercase}.header_mobile__logo{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-flex:0!important;-ms-flex:0 0 52px!important;flex:0 0 52px!important}.header_mobile__logo_link{display:block;padding:5px 0 5px 5px}.header_mobile__logo_img{display:block;width:47px}.header_mobile .icon{font-size:1.5rem;line-height:1.5rem}.header_mobile .hamburger_menu{position:relative;width:20px;height:20px}.header_mobile .hamburger_menu__item{position:absolute;display:block;width:100%;height:2px;border-radius:4px;background-color:#5c5c5c}.header_mobile .hamburger_menu__item:first-of-type{top:15%}.header_mobile .hamburger_menu__item:nth-of-type(2){top:45%}.header_mobile .hamburger_menu__item:nth-of-type(3){top:75%}.card{position:relative;display:block;margin-bottom:16px;border-bottom:6px solid #ebebeb}.card__figure{z-index:1;width:100%;height:auto;margin:0;line-height:0}.card__content,.card__figure{position:relative;display:block;font-size:0}.card__content{z-index:2}.card__label{display:-webkit-inline-box;-ms-flex-item-align:start;align-self:flex-start;overflow:hidden;height:auto;max-height:18px;padding:0 4px;font:normal 400 100% TazBold,sans-serif;font-size:.875rem;line-height:1.125rem;color:#fff;letter-spacing:.04688rem;text-transform:uppercase;background-color:#d7060c;-webkit-line-clamp:1;-webkit-box-orient:vertical}.card__title{display:-webkit-box;overflow:hidden;height:auto;font:normal 400 100% TazBlack,sans-serif;font-size:1.5rem;line-height:1.5625rem;color:#000;letter-spacing:.025rem;max-height:1.5625rem;-webkit-line-clamp:1;-webkit-box-orient:vertical}.card__lead{display:-webkit-box;overflow:hidden;margin-top:6px;font:normal 400 100% TazRegular,sans-serif;font-size:.9375rem;line-height:1.125rem;color:#000;letter-spacing:0;-webkit-line-clamp:5;-webkit-box-orient:vertical;max-height:5.625rem}.card:after{display:block;height:6px;background-color:#e6e6e6}.card .engagement_bar__meta_wrap{margin-top:2px}.card.is-A{padding:0}.card.is-A .card__title{width:288px;margin:6px 0 0;font-size:1.3125rem;line-height:1.375rem;letter-spacing:.02438rem;-webkit-line-clamp:3;max-height:4.125rem}@media screen and (min-width:360px){.card.is-A .card__title{width:328px;font-size:1.5rem;line-height:1.5625rem;letter-spacing:.0275rem;max-height:4.6875rem}}@media screen and (min-width:375px){.card.is-A .card__title{width:343px;font-size:1.56875rem;line-height:1.625rem;letter-spacing:.02875rem;max-height:4.875rem}}@media screen and (min-width:411px){.card.is-A .card__title{width:379px;font-size:1.73313rem;line-height:1.8125rem;letter-spacing:.03188rem;max-height:5.4375rem}}.card.is-A .card__content{margin-top:-18px;padding:0 16px}.card.is-A .card__lead{display:-webkit-box}@media screen and (max-width:1023px){.card.is-A .engagement_bar__meta_wrap{margin-right:16px;margin-left:16px}}.card.is-A .card__title{margin:6px 0 0}@media screen and (max-width:1023px){section.section:first-of-type>section:first-of-type .column:first-of-type>.card:first-child{margin-top:16px}}@media screen and (max-width:1023px){section.section:first-of-type>section:first-of-type .column:first-of-type>.card:first-child.is-A{margin-top:0}}.article__image_wrap .has-3-images img:first-child{-ms-grid-row:1;-ms-grid-row-span:3;-ms-grid-column:1;grid-area:a}.article__image_wrap .has-3-images img:nth-child(2){-ms-grid-row:1;-ms-grid-column:3;grid-area:b}.article__image_wrap .has-3-images img:nth-child(3){-ms-grid-row:3;-ms-grid-column:3;grid-area:c}.pieces_widget{padding:14px 16px 18px 16px;background-color:#f5f5f5}.pieces_widget__content{display:-webkit-box;display:-ms-flexbox;display:flex}.pieces_widget--Covid{padding:0;background-color:unset}@media screen and (max-width:1023px){.pieces_widget--Covid{margin-bottom:16px}}.pieces_widget--Covid .piece{width:100%}.engagement_bar__meta{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;height:48px;border-bottom:6px solid #ebebeb;-webkit-box-shadow:none;box-shadow:none}.card .engagement_bar__meta{height:42px}.card .engagement_bar__meta{border-bottom:0}.engagement_bar__meta_item{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1 1 33.33%;flex:1 1 33.33%;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.engagement_bar__meta_item .icon{margin-right:4px;font-size:1.5rem}.engagement_bar__meta_item .icon.is-small{position:relative;width:20px;height:20px;margin-right:-4px}.engagement_bar__meta_item .icon.is-small:first-of-type{z-index:3}.engagement_bar__meta_item .icon.is-small:nth-of-type(2){z-index:2}.engagement_bar__meta_item .icon.is-small:nth-of-type(3){z-index:1}.engagement_bar__meta_item .icon_wrap{height:24px}.engagement_bar__meta_item_wrap{width:100%;height:100%}.engagement_bar__meta_item>div>span,.engagement_bar__meta_item_wrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.engagement_bar__meta_item>div>span{line-height:.9375rem}.engagement_bar__meta_item--count,.engagement_bar__meta_item>div>span{margin-left:4px;font:normal 400 100% TazRegular,sans-serif;font-size:.8125rem;color:rgba(0,0,0,.64)}.engagement_bar__meta_item--count{line-height:1rem}.has-reactions .engagement_bar__meta_item--reaction{-webkit-box-flex:1;-ms-flex:1 1 50%;flex:1 1 50%}.section{background-color:#fff}.section--article .dfp_banner--rectangle_top [id$=__container__]{margin:20px auto 0}.breaking_ticker{position:relative;margin:16px auto}.breaking_ticker__link{color:#000}.breaking_ticker__content{display:block;width:288px;margin:0 auto;font:normal 400 100% TazBlack,sans-serif;font-size:.96937rem;line-height:1.0625rem;letter-spacing:.0175rem;text-align:center}@media screen and (min-width:360px){.breaking_ticker__content{width:328px;font-size:1.11563rem;line-height:1.25rem;letter-spacing:.02063rem}}@media screen and (min-width:375px){.breaking_ticker__content{width:343px;font-size:1.18437rem;line-height:1.3125rem;letter-spacing:.02187rem}}@media screen and (min-width:411px){.breaking_ticker__content{width:379px;font-size:1.34937rem;line-height:1.4375rem;letter-spacing:.025rem}}img:-moz-broken{opacity:0}img{position:relative}img:after{content:" ";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#fff}@media screen and (max-width:1023px){body{background-color:#fafafa;left:0;right:0}}.card img{width:100%;font-size:0;line-height:0}figure{width:100%;margin:0;font-size:0;line-height:0}.site_wrap{position:relative;max-width:414px;min-height:100vh;margin:0 auto;padding:48px 0 0;-webkit-box-shadow:0 0 8px 0 rgba(0,0,0,.1);box-shadow:0 0 8px 0 rgba(0,0,0,.1);background-color:#fff}.site_wrap .columns{margin:0}.site_wrap .column:not(.is-sidebar){padding:0!important}.site_wrap .article .dfp_banner{margin-bottom:20px}.is-shadowless{-webkit-box-shadow:none!important;box-shadow:none!important}
-        
-    
-</style>
-
-
-
-    
-    
-    
-        <link rel="stylesheet" href="/dist/css/app.45686fcf.css">
-    
-
-    
-    
-        <link rel="stylesheet" href="/dist/css/vendors-initial.5207722b.css">
-    
-
-    
-    
-    
-        <link rel="prefetch" href="/dist/js/vendors-async.41cab281.js">
-    
-
-
-
-<script type="text/javascript">window.gdprAppliesGlobally=true;(function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)}
-else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return}
-var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}}
-if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator");(function(e){
-  var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("49e2dd21-509f-4e31-9f4e-34808af3cb36")})();</script>
-
-<!-- generic -->
-<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-
-<!-- generics -->
-<link rel="icon" href="/static/favicons/favicon-32.png" sizes="32x32">
-<link rel="icon" href="/static/favicons/favicon-128.png" sizes="128x128">
-<link rel="icon" href="/static/favicons/favicon-192.png" sizes="192x192">
-
-<!-- Android -->
-<link rel="shortcut icon" sizes="196x196" href="/static/favicons/favicon-196.png">
-
-<!-- iOS -->
-<link rel="apple-touch-icon" href="/static/favicons/favicon-152.png" sizes="152x152">
-<link rel="apple-touch-icon" href="/static/favicons/favicon-180.png" sizes="180x180">
-
-<!-- Windows 8.1 + IE11 and above -->
-<meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
-
-
-    <link rel="manifest" href="/dist/manifest.json" crossorigin="use-credentials">
-
-
-<script src="/static/vendors/iframeResizer.min.js" async></script>
-<script src="https://cdn.midas-network.com/Common/GetUserIdAsync/769" async></script>
-
-    
-
-    
-    
-    
-        <title>Galerija slika - Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe! | 24sata</title>
-        <meta name="keywords" content="cijena goriva, benzin, nafta, gorivo, dizel, autoplin, cijene">
-        <meta name="decription" content="Porasle su cijene bezina, dizela i autoplina. Dizel je tako poskupio za 12 lipa, benzin za 22 lipe, a autoplin za 13 lipa. Prosječni spremnik od 50 litara benzina skuplji za 10,5 kuna, a dizela za šest">
-    
-
-
-    
-
-    
-        
-<!-- Google Tag Manager -->
-<script>
-    
-</script>
-<script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PCRFFK6');
-</script>
-
-
-    <script async="async" id="googletagservices_gpt_script" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-
-<script type="text/javascript">
-    var yieldlove_prevent_autostart = true;
-    var yieldlove_cmd = yieldlove_cmd || [];
-</script>
-
-<script>
-    var googletag = googletag || {};
-    googletag.cmd = googletag.cmd || [];
-
-</script>
-
-<script type="text/javascript">
-
-    
-
-</script>
-
-<!-- Google Analytics -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-98786130-1', 'auto', 'G360' );
-</script>
-
-
-    
-
-    
-    <link rel="canonical" href="https://www.24sata.hr/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139" />
-
-
-    
-    
-        
-        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.share.min.css?bust=20200809">
-        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.ads.min.css?bust=20200809">
-        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.dist.min.css?bust=20200809">
-        <link rel="prefetch" as="style" href="/static/vendors/videojs/videojs.cust.min.css?bust=20200809">
-
-        
-        <link rel="prefetch" as="script" href="//code.jquery.com/jquery-3.3.1.min.js?bust=20200809" crossorigin="anonymous"></link>
-        <link rel="prefetch" as="script" href="//imasdk.googleapis.com/js/sdkloader/ima3.js?bust=20200809" crossorigin="anonymous"></link>
-
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-consts.min.js?bust=20200809"></link>
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-dist.min.js?bust=20200809"></link>
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-dist.hr.min.js?bust=20200809"></link>
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-cust.min.js?bust=20200809"></link>
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-share.min.js?bust=20200809"></link>
-        <link rel="prefetch" as="script" href="/static/vendors/videojs/videojs-share.hr.min.js?bust=20200809"></link>
-    
-
-</head>
-<body>
-
-    <!-- *** Start VueJS APP *** -->
-    
-        
-            <noscript>
-    <header>
-        
-    </header>
-</noscript>
-
-        
-
-        
-    
-    <script id="galleryDataScript">
-        <!--
-            window.galleryData = {"data": {"type": "gallery", "id": "564812", "attributes": {"title": "Opet skuplje gorivo: Spremnik benzina skuplji za 10,5 kuna...", "description": "", "comments_enabled": false, "show_thumbnails": true, "show_more_galleries": true, "item_count": 1, "resource_url": "/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139", "is_embedded": null}, "relationships": {"cover_image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "items": {"data": [{"type": "gallery-item", "id": "4388786", "attributes": {"content_type": "image", "content_id": 1657526, "title": "", "description": ""}, "relationships": {"image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "video": {"data": null}}}], "meta": {"count": 1}}, "content_object": {"data": {"type": "content_object", "id": "616139"}}}}, "included": [{"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}, {"type": "gallery-item", "id": "4388786", "attributes": {"content_type": "image", "content_id": 1657526, "title": "", "description": ""}, "relationships": {"image": {"data": {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}}, "video": {"data": null}}}, {"type": "image", "id": "1657526", "attributes": {"width": 1600, "height": 1065, "caption": "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL", "title": "", "url": "https://app.24sata.hr/media/images/2019-08/pxl_260219_23725792.jpg", "crop": {}, "created_date": "2019-02-26T10:35:53.332718+01:00"}, "relationships": {"author": {"data": {"type": "author", "id": "11881", "attributes": {"name": "Hrvoje Jelavic/PIXSELL", "slug": "hrvoje-jelavicpixsell", "title": ""}, "relationships": {"image": {"data": null}}}}}}]};
-        //-->
-    </script>
-
-
-    <div id="app"></div>
-
-    
-        
-            <!-- Schema Markup - organization -->
-
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "Organization",
-        "url": "https://www.24sata.hr",
-        "name": "24sata.hr",
-        "logo": {
-        "@type" : "ImageObject",
-        "url" : "https://www.24sata.hr/static/logo_24.png"
-        },
-        "sameAs": [
-            "https://www.facebook.com/24sata/",
-            "https://twitter.com/24sata_HR",
-            "https://www.youtube.com/channel/UCpJNsBEupVtlLlVIYw-kFpg"
-        ]
-    }
-</script>
-
-
-<!-- Schema Markup - webpage -->
-
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "WebPage",
-        "name": "Galerija slika - Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!",
-        "publisher": {
-            "@type": "Organization",
-            "name": "24sata.hr",
-            "url" : "https://www.24sata.hr",
-            "logo": {
-                "@type" : "ImageObject",
-                "url" : "https://www.24sata.hr/static/logo_24.png"
-            },
-            "sameAs": [
-                "https://www.facebook.com/24sata/",
-                "https://twitter.com/24sata_HR",
-                "https://www.youtube.com/channel/UCpJNsBEupVtlLlVIYw-kFpg"
-            ]
-        },
-        "url": "https://www.24sata.hr"
-    }
-</script>
-
-<!-- Schema Markup - website -->
-
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org/",
-        "@type": "WebSite",
-        "url": "https://www.24sata.hr",
-        "name": "24sata.hr"
-    }
-</script>
-
-            
-            
-
-<!-- Schema Markup - gallery -->
-<script type="application/ld+json">
-{
-    "@context":"http://schema.org",
-    "@type":"ImageGallery",
-    "description":"Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!",
-    "keywords":"cijena goriva, benzin, nafta, gorivo, dizel, autoplin, cijene",
-    "associatedMedia": [
-    
-        
-            
-            {
-                "@type":"ImageObject",
-                "contentUrl": "https://img.24sata.hr/gt9LRTgjVc76dudmDifV0no3RO4=/1600x1065/smart/media/images/2019-08/pxl_260219_23725792.jpg",
-                
-                "caption" : "26.02.2019., Sibenik - Od ponoci ponovo skuplja goriva na benzinskim postajama sirom Hrvatske. Photo: Hrvoje Jelavic/PIXSELL",
-                
-                "uploadDate": "2019-02-26T10:35:53.332718+01:00"
-            }
-        
-    
-    ]
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1024, initial-scale=0.8, maximum-scale=1">
+
+	<link rel="icon" type="image/png" href="https://net.hr/wp-content/themes/adriaticmedia-nethr/favicon.png">
+		<title>OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune &#8211; Net.hr</title>
+<script>(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+        'use strict';var g=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},l=this||self,m=/^[\w+/_-]+[=]{0,2}$/,p=null,q=function(){},r=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";
+          if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},u=function(a,b){function c(){}c.prototype=b.prototype;a.prototype=new c;a.prototype.constructor=a};var v=function(a,b){Object.defineProperty(l,a,{configurable:!1,get:function(){return b},set:q})};var y=function(a,b){this.b=a===w&&b||"";this.a=x},x={},w={};var aa=function(a,b){a.src=b instanceof y&&b.constructor===y&&b.a===x?b.b:"type_error:TrustedResourceUrl";if(null===p)b:{b=l.document;if((b=b.querySelector&&b.querySelector("script[nonce]"))&&(b=b.nonce||b.getAttribute("nonce"))&&m.test(b)){p=b;break b}p=""}b=p;b&&a.setAttribute("nonce",b)};var z=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^+new Date).toString(36)};var A=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},B=function(a){this.a=a||l.document||document};B.prototype.appendChild=function(a,b){a.appendChild(b)};var C=function(a,b,c,d,e,f){try{var k=a.a,h=A(a.a,"SCRIPT");h.async=!0;aa(h,b);k.head.appendChild(h);h.addEventListener("load",function(){e();d&&k.head.removeChild(h)});h.addEventListener("error",function(){0<c?C(a,b,c-1,d,e,f):(d&&k.head.removeChild(h),f())})}catch(n){f()}};var ba=l.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ca=l.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),da=l.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),ea=function(a,b,c){this.b=a;this.f=new B(this.b);this.a=null;this.c=[];this.g=!1;this.i=b;this.h=c},F=function(a){if(a.b.body&&!a.g){var b=
+          function(){D(a);l.setTimeout(function(){return E(a,3)},50)};C(a.f,a.i,2,!0,function(){l[a.h]||b()},b);a.g=!0}},D=function(a){for(var b=G(1,5),c=0;c<b;c++){var d=H(a);a.b.body.appendChild(d);a.c.push(d)}b=H(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=G(100,110).toString()+"%";b.style.zIndex=G(2147483544,2147483644).toString();b.style["background-color"]=I(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=I(0,10,0,10,0,10);b.style.display=
+          "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=H(a);c.style.width=G(80,85).toString()+"%";c.style.maxWidth=G(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=A(a.f.a,"IMG");d.className=z();d.src=ba;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=H(a),f=H(a);f.style["font-weight"]="bold";f.textContent=ca;var k=H(a);k.textContent=da;J(a,
+          e,f);J(a,e,k);J(a,c,d);J(a,c,e);J(a,b,c);a.a=b;a.b.body.appendChild(a.a);b=G(1,5);for(c=0;c<b;c++)d=H(a),a.b.body.appendChild(d),a.c.push(d)},J=function(a,b,c){for(var d=G(1,5),e=0;e<d;e++){var f=H(a);b.appendChild(f)}b.appendChild(c);c=G(1,5);for(d=0;d<c;d++)e=H(a),b.appendChild(e)},G=function(a,b){return Math.floor(a+Math.random()*(b-a))},I=function(a,b,c,d,e,f){return"rgb("+G(Math.max(a,0),Math.min(b,255)).toString()+","+G(Math.max(c,0),Math.min(d,255)).toString()+","+G(Math.max(e,0),Math.min(f,
+          255)).toString()+")"},H=function(a){a=A(a.f.a,"DIV");a.className=z();return a},E=function(a,b){0>=b||null!=a.a&&0!=a.a.offsetHeight&&0!=a.a.offsetWidth||(fa(a),D(a),l.setTimeout(function(){return E(a,b-1)},50))},fa=function(a){var b=a.c;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:g(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.c=[];(b=a.a)&&b.parentNode&&b.parentNode.removeChild(b);a.a=null};var ia=function(a,b,c,d,e){var f=ha(c),k=function(n){n.appendChild(f);l.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},h=function(n){document.body?k(document.body):0<n?l.setTimeout(function(){h(n-1)},e):b()};h(3)},ha=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var K={},L=null;var M=function(){},N="function"==typeof Uint8Array,O=function(a,b){a.b=null;b||(b=[]);a.j=void 0;a.f=-1;a.a=b;a:{if(b=a.a.length){--b;var c=a.a[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||N&&c instanceof Uint8Array)){a.g=b-a.f;a.c=c;break a}}a.g=Number.MAX_VALUE}a.i={}},P=[],Q=function(a,b){if(b<a.g){b+=a.f;var c=a.a[b];return c===P?a.a[b]=[]:c}if(a.c)return c=a.c[b],c===P?a.c[b]=[]:c},R=function(a,b,c){a.b||(a.b={});if(!a.b[c]){var d=Q(a,c);d&&(a.b[c]=new b(d))}return a.b[c]};
+        M.prototype.h=N?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){var b;void 0===b&&(b=0);if(!L){L={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],e=0;5>e;e++){var f=c.concat(d[e].split(""));K[e]=f;for(var k=0;k<f.length;k++){var h=f[k];void 0===L[h]&&(L[h]=k)}}}b=K[b];c=[];for(d=0;d<this.length;d+=3){var n=this[d],t=(e=d+1<this.length)?this[d+1]:0;h=(f=d+2<this.length)?this[d+2]:0;k=n>>2;n=(n&
+          3)<<4|t>>4;t=(t&15)<<2|h>>6;h&=63;f||(h=64,e||(t=64));c.push(b[k],b[n],b[t]||"",b[h]||"")}return c.join("")};try{return JSON.stringify(this.a&&this.a,S)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.a&&this.a,S)};var S=function(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)};M.prototype.toString=function(){return this.a.toString()};var T=function(a){O(this,a)};u(T,M);var U=function(a){O(this,a)};u(U,M);var ja=function(a,b){this.c=new B(a);var c=R(b,T,5);c=new y(w,Q(c,4)||"");this.b=new ea(a,c,Q(b,4));this.a=b},ka=function(a,b,c,d){b=new T(b?JSON.parse(b):null);b=new y(w,Q(b,4)||"");C(a.c,b,3,!1,c,function(){ia(function(){F(a.b);d(!1)},function(){d(!0)},Q(a.a,2),Q(a.a,3),Q(a.a,1))})};var la=function(a,b){V(a,"internal_api_load_with_sb",function(c,d,e){ka(b,c,d,e)});V(a,"internal_api_sb",function(){F(b.b)})},V=function(a,b,c){a=l.btoa(a+b);v(a,c)},W=function(a,b,c){for(var d=[],e=2;e<arguments.length;++e)d[e-2]=arguments[e];e=l.btoa(a+b);e=l[e];if("function"==r(e))e.apply(null,d);else throw Error("API not exported.");};var X=function(a){O(this,a)};u(X,M);var Y=function(a){this.h=window;this.a=a;this.b=Q(this.a,1);this.f=R(this.a,T,2);this.g=R(this.a,U,3);this.c=!1};Y.prototype.start=function(){ma();var a=new ja(this.h.document,this.g);la(this.b,a);na(this)};
+        var ma=function(){var a=function(){if(!l.frames.googlefcPresent)if(document.body){var b=document.createElement("iframe");b.style.display="none";b.style.width="0px";b.style.height="0px";b.style.border="none";b.style.zIndex="-1000";b.style.left="-1000px";b.style.top="-1000px";b.name="googlefcPresent";document.body.appendChild(b)}else l.setTimeout(a,5)};a()},na=function(a){var b=Date.now();W(a.b,"internal_api_load_with_sb",a.f.h(),function(){var c;var d=a.b,e=l[l.btoa(d+"loader_js")];if(e){e=l.atob(e);
+          e=parseInt(e,10);d=l.btoa(d+"loader_js").split(".");var f=l;d[0]in f||"undefined"==typeof f.execScript||f.execScript("var "+d[0]);for(;d.length&&(c=d.shift());)d.length?f[c]&&f[c]!==Object.prototype[c]?f=f[c]:f=f[c]={}:f[c]=null;c=Math.abs(b-e);c=1728E5>c?0:c}else c=-1;0!=c&&(W(a.b,"internal_api_sb"),Z(a,Q(a.a,6)))},function(c){Z(a,c?Q(a.a,4):Q(a.a,5))})},Z=function(a,b){a.c||(a.c=!0,a=new l.XMLHttpRequest,a.open("GET",b,!0),a.send())};(function(a,b){l[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];l[a]=q;b.apply(null,d)}})("__d3lUW8vwsKlB__",function(a){"function"==typeof window.atob&&(a=window.atob(a),a=new X(a?JSON.parse(a):null),(new Y(a)).start())});}).call(this);
+
+      window.__d3lUW8vwsKlB__("WyIzODZjYmI5NWY4OGE2NzY3IixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2YvQUdTS1d4V1dEOE9oQnJzOEV1TGpjUG1DdXFXcU9hTkRDOHMybkRKSGt0TzZoc1I4cTVQbzZ3Z0lkemthY3JkSms2Ql9UYUNLMkQ2U1hlcjFYUmxkcHR1OEJzWVx1MDAzZCJdCixbMjAsImRpdi1ncHQtYWQiLDEwMCwiTXpnMlkySmlPVFZtT0RoaE5qYzJOd1x1MDAzZFx1MDAzZCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL3d3dy5nc3RhdGljLmNvbS8wZW1uL2YvcC8zODZjYmI5NWY4OGE2NzY3LmpzP3VzcXBcdTAwM2RDQW8iXQpdCiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hWMndyaC1DRVQ3RFZuNE5GQWxfSXl3QmY2VWpnVDEya29zbENBcHVoVjJwQUNZb19BZEtmOFFObHlUT0kwWkQ2SDlJaDg1QXo2THZVdGJzZ0RTP2FiXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4VWxDMGc0M3JqOFZwVk1OdzY0eE9sQnd5ZlVlaUY1M0FPT3Z3MGhRTmNjWkFJSDh3MUJiTU1CRWU0MkM2cTZSX2QzSEZ1V0NpZndxNDdWWWZYWD9hYlx1MDAzZDJcdTAwMjZzYmZcdTAwM2QxIiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hYNVV0Z2FSbU5HdEJzd2Zuc0RqdmN6Sk9ELW4zWk9XczFtUWtwb2Z0d1h0cEZQUV9JTGdEZU5kY3lLMlVFWVNQbjhtSWhsaktTVXZZaHlkb3k2P3NiZlx1MDAzZDIiXQo=");
+      </script><link rel='dns-prefetch' href='//www.googletagservices.com' />
+<link rel='dns-prefetch' href='//player.h-cdn.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel="alternate" type="application/rss+xml" title="Net.hr &raquo; Kanal" href="https://net.hr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Net.hr &raquo; Kanal komentara" href="https://net.hr/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Net.hr &raquo; OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune Kanal komentara" href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/net.hr\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
 }
+</style>
+	<link rel='stylesheet' id='all-css-0' href='https://net.hr/wp-includes/css/dist/block-library/style.min.css?m=1607466142g' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='nethr-slick-style-css'  href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css?ver=5.6' media='all' />
+<link rel='stylesheet' id='nethr-slick-theme-style-css'  href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css?ver=5.6' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='nethr-font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=5.6' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='nethr-font-oswald-css'  href='//fonts.googleapis.com/css?family=Oswald%3A400%2C300%2C700&#038;subset=latin%2Clatin-ext&#038;ver=5.6' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='nethr-font-source-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C900%2C400italic&#038;subset=latin%2Clatin-ext&#038;ver=5.6' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='nethr-font-pt-sans-css'  href='https://fonts.googleapis.com/css?family=PT+Sans%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=5.6' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='nethr-font-pt-serif-css'  href='https://fonts.googleapis.com/css?family=PT+Serif%3A400%2C400italic%2C700%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=5.6' media='all' />
+<link rel='stylesheet' id='all-css-14' href='https://net.hr/_static/??-eJyNjN0KwjAMRl/ILur8mReyR5HQhjXapqPJkL29UxD0bnffge8ceI7OFzESA4uUSQFDZTT2mQKjE7JYQW1O1HjVDfwIeXJjmgYWhTvZiP7hLs0ecglTWkIasVLAEObPZBnWFm4sHrR4xuRSGYr+QZNZ1paW25ffSp+vu9O2Ox7ac9u9AIXqW6s=' type='text/css' media='all' />
+<script type='text/javascript' src='https://net.hr/wp-content/themes/adriaticmedia-nethr/js/prebid4.10.0.js?m=1604922930g'></script>
+<script src='https://www.googletagservices.com/tag/js/gpt.js?ver=5.6' id='nethr-gpt-js'></script>
+<script id='nethr-gpt-js-after'>
+  var nethr_publisher_id = 21783803;
+  var nethr_network_code = 0;
+  var googletag = googletag || {}
+  googletag.cmd = googletag.cmd || []
+  var googleSlots = {}
+  var tg_sizes = {"contentbelow":[[[0,0],[300,250]],[[360,0],[340,280]],[[375,0],[354,280]],[[403,0],[382,280]],[[412,0],[392,280]],[[480,0],[460,280]],[[600,0],[580,280]],[[620,0],[660,350]],[[1024,0],[660,350]]]}; //size mappings
+  var tg_mappings_object = ["contentbelow"];
+  var tg_mappings = {}
+  for (var i in tg_mappings_object) {
+    var size = tg_mappings_object[i]
+    var mapping = googletag.sizeMapping()
+    for (var j in tg_sizes[size]) {
+      mapping.addSize(tg_sizes[size][j][0], tg_sizes[size][j][1])
+    }
+    tg_mappings[size] = mapping.build()
+  }
+  var up_settings = {"h":954,"sr":0,"up_b":5,"ver":"289"};
+
+  var up_array = [{"a":1,"b":7,"up_b":3,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_billboard_v1","size":[[1200,500],[970,500],[1200,250],[970,250],[1024,250],[1024,500],[1000,500]],"opt_div":"nethr_desktop_billboard_v1","sizeMapping":"","j":0,"k":0},{"a":1,"b":6,"up_b":5,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_300x250_v1","size":[[300,600],[300,250]],"opt_div":"nethr_desktop_300x250_v1","sizeMapping":"","j":0,"k":0},{"a":0,"b":7,"up_b":6,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_intext_v1","size":[[660,350],[300,250],[670,350],[670,300],[660,1000]],"opt_div":"nethr_desktop_intext_v1","sizeMapping":"","j":0,"k":0},{"a":2,"b":8,"up_b":7,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_intext_v2","size":[[660,350],[300,250]],"opt_div":"nethr_desktop_intext_v2","sizeMapping":"contentbelow","j":0,"k":0},{"a":1,"b":7,"up_b":7,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_intext_v3","size":[[660,350],[300,250]],"opt_div":"nethr_desktop_intext_v3","sizeMapping":"contentbelow","j":0,"k":0},{"a":2,"b":8,"up_b":8,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_intext_v4","size":[[660,350],[300,250]],"opt_div":"nethr_desktop_intext_v4","sizeMapping":"contentbelow","j":0,"k":0},{"a":2,"b":8,"up_b":2,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_wallpaper_left","size":[[200,900],[300,1050],[340,1050],[300,900],[300,600]],"opt_div":"nethr_desktop_wallpaper_left","sizeMapping":"","j":0,"k":0},{"a":1,"b":7,"up_b":3,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_wallpaper_right","size":[[201,901],[301,1051],[341,1051],[301,901],[300,600]],"opt_div":"nethr_desktop_wallpaper_right","sizeMapping":"","j":0,"k":1},{"a":0,"b":0,"up_b":3,"adUnitPath":"\/21783803\/net.hr\/nethr_desktop_300x600_v_2","size":[[300,600]],"opt_div":"nethr_desktop_300x600_v_2","sizeMapping":"","j":0,"k":0}];
+
+  var up_verzija = 'v_1.4_b'
+  var up_lazy_load_array = [];
+  var up_full_width_array = [];
+
+  // Make sure that the properties exist on the window.
+  window.googlefc = window.googlefc || {};
+  window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+
+  googlefc.callbackQueue.push({
+  'CONSENT_DATA_READY':
+  () => __tcfapi('getTCData', 0, (data, success) => {
+  if (data.purpose.consents[1]) {
+    googletag.pubads().refresh();
+  }
+  })
+  });
+
+  googletag.loadUnit = function (unit) {
+    var ds;
+    if (typeof unit.size === 'undefined') {
+      unit.size = [[300, 250]];
+    }
+    ds = googletag.defineSlot(unit.adUnitPath, unit.size, unit.opt_div);
+
+//SIZEMAPPINGS
+    if (typeof unit.sizeMapping !== 'undefined' && typeof tg_mappings[unit.sizeMapping] !== 'undefined') {
+      ds.defineSizeMapping(tg_mappings[unit.sizeMapping]);
+    }
+
+    ds.addService(googletag.pubads())
+// RULE ZA FLOOR PRICE
+    if (unit.up_b) {
+      ds.setTargeting('upc', unit.up_b);
+    } else if (up_settings.up_b) {
+      ds.setTargeting('upc', up_settings.up_b);
+    }
+  }
+  googletag.cmd.push(function () {
+    for (var index in up_array) {
+      var unit
+      if (up_array.hasOwnProperty(index)) {
+        unit = up_array[index]
+        googletag.loadUnit(unit)
+      }
+    }
+
+              googletag.pubads().setTargeting( "wp_post_type", ["single","post"] );
+                  googletag.pubads().setTargeting( "post_slug", ["od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune"] );
+                  googletag.pubads().setTargeting( "post_tag", ["benzin","cijene-goriva","gorivo","poskupljenje","vozaci"] );
+                  googletag.pubads().setTargeting( "nethr_category", ["danas"] );
+          
+    if (up_settings.sr === 1) {
+      googletag.pubads().enableSingleRequest();
+    }
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().disableInitialLoad();
+    googletag.enableServices();
+  })
+  
 </script>
-
-        
-    
-
-    <noscript>
-    
-        <h1>Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!</h1>
-        <a href="https://www.24sata.hr/news/velik-skok-cijena-goriva-litra-benzina-poskupjela-za-22-lipe-616139">Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!</a>
-        
-            
-                
-                <img src="https://img.24sata.hr/gt9LRTgjVc76dudmDifV0no3RO4=/1600x1065/smart/media/images/2019-08/pxl_260219_23725792.jpg" alt="Velik skok cijena goriva: Litra benzina poskupjela za 22 lipe!">
-            
-        
-        </noscript>
-    
-
-
-        
-            
-        
-
-        
-
-            
-                
-                
-                
-                
-                    <script type="module" src="/dist/js/vendors-initial.b8defe7b.js"></script>
-                
-
-                
-                
-                    <script type="module" src="/dist/js/app.994194f2.js"></script>
-                
-
-                
-                
-                    <script type="text/javascript" src="/dist/js/vendors-initial-legacy.0b45d981.js" nomodule></script>
-                
-
-                
-                
-                    <script type="text/javascript" src="/dist/js/app-legacy.0f576419.js" nomodule></script>
-                
-            
-
-        
-    
-    <!-- *** End VueJS APP *** -->
-
-    
-        
-        
-            <script>
-                var gert_config = {
-                    HOST: "https://gert.sds.rocks",
-                    SITE: "24SATA",
-                    ARTICLE_READ_TIMEOUT: 10,
-                    POST_EVENTS_INTERVAL: 10,
-                    GET_OBJECTS_INTERVAL: 10,
-                    GET_OBJECTS_NUM: 15,
-                    OBJECT_DAYS_TIMEDELTA: 5
-                };
-                
-                    var gert_events_script = gert_config.HOST.concat("/events.js?t=").concat(new Date().getTime()).concat("?");
-                
-                (function (w,d,s,h,g,c) {
-                    w[g] = {CONFIG: c};
-                    var el = d.createElement(s);var t = d.getElementsByTagName(s)[0];el.async = 1;el.src = h;t.parentNode.insertBefore(el, t)
-                })(window, document, 'scr'+'ipt', gert_events_script, '_gert', gert_config);
+<script type='text/javascript' src='https://net.hr/_static/??-eJzTLy/QzcxLzilNSS3WzwKiwtLUokoopZebmaeXVayjj0+Rbm5melFiSSpUsX2uraGZgbmJmZmhiUkWAK9uIh8='></script>
+<script src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js?ver=5.6' id='nethr-slick-js'></script>
+<script src='https://cdn.connectad.io/connectmyusers.js?ver=5.6' id='nethr-connectad-js'></script>
+<script src='https://rtl-static.cdn.sysbee.net/javascript_new/common/scripts/fcCheck.js?v=2020101603&#038;ver=5.6' id='rtl-consent-js'></script>
+<script type='text/javascript' src='https://net.hr/_static/??-eJyNy1sKgCAQAMALZWso9hWdZdEFH7iJLlS3zyP0OzBwN+UvFmIBiVRpAIaeUJKvFBIqJokd8oAxqbyqJFnzWOD3o6chh3nOemxOO6vNbk3+AOXYK/w='></script>
+<link rel="https://api.w.org/" href="https://net.hr/wp-json/" /><link rel="alternate" type="application/json" href="https://net.hr/wp-json/wp/v2/posts/2462766" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://net.hr/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://net.hr/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6" />
+<link rel="canonical" href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" />
+<link rel='shortlink' href='https://wp.me/pbMqYh-akG2' />
+<link rel="alternate" type="application/json+oembed" href="https://net.hr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://net.hr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&#038;format=xml" />
+			<meta property="fb:pages" content="86874647886" />
+							<meta property="ia:markup_url_dev" content="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/?ia_markup=1" />
+				<style type='text/css'>img#wpstats{display:none}</style><!-- (C)2000-2015 Gemius SA - gemiusAudience / iskon.hr  -->
+            <script type="text/javascript">
+                <!--//--><![CDATA[//><!--
+                var pp_gemius_identifier = 'nXqV7XtpEXOQIx38wEzRsXXpnF8NTsv7Fip7GkGdQvv.z7';
+                // lines below shouldn't be edited
+                function gemius_pending(i) { window[i] = window[i] || function() {var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
+                gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
+                (function(d,t) {try {var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':''); gt.setAttribute('async','async');
+                    gt.setAttribute('defer','defer'); gt.src=l+'://hr.hit.gemius.pl/xgemius.js'; s.parentNode.insertBefore(gt,s);} catch (e) {}})(document,'script');
+                //--><!]]>
             </script>
         
-    
-
-
-    <!-- *** Start test for ios zoom *** -->
-    <script>
-    (function iosZommHack () {
-        /*
-            NOTE: This code overrides the viewport settings, an improvement would be
-            to take the original value and only add or change the user-scalable value
-        */
-
-        // optionally only activate for iOS (done because I havn't tested the effect under other OS/devices combinations such as Android)
-        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
-        if (iOS) preventZoomOnFocus ();
-
-
-        function preventZoomOnFocus () {
-            document.documentElement.addEventListener("touchstart", onTouchStart);
-            document.documentElement.addEventListener("focusin", onFocusIn);
+        <!--    danas   -->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            (function() {
+                window.dm=window.dm||{AjaxData:[]};
+                window.dm.AjaxEvent=function(et,d,ssid,ad){
+                    dm.AjaxData.push({et:et,d:d,ssid:ssid,ad:ad});
+                    window.DotMetricsObj&&DotMetricsObj.onAjaxDataUpdate();
+                };
+                var d=document,
+                    h=d.getElementsByTagName('head')[0],
+                    s=d.createElement('script');
+                s.type='text/javascript';
+                s.async=true;
+                s.src=document.location.protocol + '//script.dotmetrics.net/door.js?id=318';
+                h.appendChild(s);
+            }());
+            /* ]]> */
+        </script>
+	        <script>
+            (function(u,p,s,c,r){u[r]=u[r]||function(p){(u[r].q=u[r].q||[]).push(p)},u[r].ls=1*new Date();
+                var a=p.createElement(s),m=p.getElementsByTagName(s)[0];a.async=1;a.src=c;m.parentNode.insertBefore(a,m) })(window,document,'script','//files.upscore.com/async/upScore.js','upScore');
+            var upscore_data = {"config":{"domain":"net.hr","article":".article-content","track_positions":false},"data":{"section":"Hrvatska,Vijesti","object_id":2462766,"pubdate":"2021-01-05T08:34:14+0100","author":"Danas.hr","object_type":"article","custom_source":"","custom_sponsored":"","custom_app":0}};
+            upScore(upscore_data);
+        </script>
+                <script>
+        function tealium_init() {
+          window.utag_data = {"site_name":"net.hr","page_name":"OD PONO\u0106I SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosje\u010dni spremnik benzina skuplji je za dvije kune","page_type":"article","page_subtype":"","page_id":2462766,"article_author":"Danas.hr","article_timestamp":"2021-01-05 08:34:14","article_keywords":["benzin","cijene goriva","gorivo","poskupljenje","voza\u010di"],"page_level1":"danas","page_level2":"hrvatska","page_level3":"od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune"};
+            (function (a, b, c, d) {
+              a = '//tags.tiqcdn.com/utag/rtl-croatia/net-hr/prod/utag.js';
+              b = document;
+              c = 'script';
+              d = b.createElement(c);
+              d.src = a;
+              d.type = 'text/java' + c;
+              d.async = true;
+              a = b.getElementsByTagName(c)[0];
+              a.parentNode.insertBefore(d, a);
+            })();
         }
-
-        var dont_disable_for = ["checkbox", "radio", "file", "button", "image", "submit", "reset", "hidden"];
-
-        function onTouchStart(evt) {
-            var tn = evt.target.tagName;
-
-            // No need to do anything if the initial target isn't a known element
-            // which will cause a zoom upon receiving focus
-            if (tn != "SELECT" &&  tn != "TEXTAREA" && (tn != "INPUT" || dont_disable_for.indexOf(evt.target.getAttribute("type")) > -1) ) return;
-
-            // disable zoom
-            setViewport("width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0");
-        }
-
-        // NOTE: for now assuming this focusIn is caused by user interaction
-        function onFocusIn(evt) {
-            // reenable zoom
-            setViewport("width=device-width, initial-scale=1.0, maximum-scale=5.0");
-        }
-
-        // add or update the <meta name="viewport"> element
-        function setViewport(newvalue) {
-            var vpnode = document.documentElement.querySelector('head meta[name="viewport"]');
-            if (vpnode) {
-                vpnode.setAttribute("content",newvalue);
-            } else {
-                vpnode = document.createElement("meta");
-                vpnode.setAttribute("name", "viewport");
-                vpnode.setAttribute("content", newvalue);
+        window.googlefc = window.googlefc || {};
+        window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+        googlefc.callbackQueue.push({
+          'CONSENT_DATA_READY':
+            function() {
+              __tcfapi('getTCData', 0, (data, success) => tealium_init());
             }
-        }})()
-    </script>
-    <!-- *** End test for ios zoom *** -->
+        });
+        </script><!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KZ5ZQHC');</script>
+<!-- End Google Tag Manager --><meta name="description" content="Spremnik od 50 litara benzina od ponoći je u prosjeku skuplji za dvije kuneUtorkom se u Hrvatskoj mijenja cijena goriva, a od ponoći je ono poskupjelo u odnosu na prošli tjedan. Kako piše portal cije...">      <meta name="onesignal" content="wordpress-plugin"/>
+            <script>
 
-    
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://net.hr");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '0f929f89-66ab-44c7-bccc-3751597d7b94';
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "Hvala na pretplati.";
+oneSignal_options['path'] = "https://net.hr/wp-content/plugins/OneSignal-WordPress-Plugin-master/sdk_files/";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = 'Net.hr vam želi slati obavijesti. Odjavite se u bilo kojem trenutku.';
+oneSignal_options['promptOptions']['acceptButtonText'] = 'Dozvoli';
+oneSignal_options['promptOptions']['cancelButtonText'] = 'Ne hvala';
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'inverse';
+oneSignal_options['notifyButton']['size'] = 'small';
+oneSignal_options['notifyButton']['displayPredicate'] = function() {
+              return OneSignal.isPushNotificationsEnabled()
+                      .then(function(isPushEnabled) {
+                          return !isPushEnabled;
+                      });
+            };
+oneSignal_options['notifyButton']['showCredit'] = false;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['text']['tip.state.unsubscribed'] = 'Prijava na obavijesti';
+oneSignal_options['notifyButton']['text']['tip.state.subscribed'] = 'Prijavljeni ste na obavijesti';
+oneSignal_options['notifyButton']['text']['tip.state.blocked'] = 'Blokirali ste obavijesti';
+oneSignal_options['notifyButton']['text']['message.action.subscribed'] = 'Hvala na prijavi!';
+oneSignal_options['notifyButton']['text']['message.action.resubscribed'] = 'Prijavljeni ste na obavijesti';
+oneSignal_options['notifyButton']['text']['message.action.unsubscribed'] = 'Više nećete dobivati obavijesti';
+oneSignal_options['notifyButton']['text']['dialog.main.title'] = 'Notifikacije Net.hr';
+oneSignal_options['notifyButton']['text']['dialog.main.button.subscribe'] = 'Prijava';
+oneSignal_options['notifyButton']['text']['dialog.main.button.unsubscribe'] = 'Odjava';
+oneSignal_options['notifyButton']['text']['dialog.blocked.title'] = 'Prijava na obavijesti';
+oneSignal_options['notifyButton']['text']['dialog.blocked.message'] = 'Pratite ove korake da dozvolite obavijesti';
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<meta name="description" content="Spremnik od 50 litara benzina od ponoći je u prosjeku skuplji za dvije kune Utorkom se u Hrvatskoj mijenja cijena goriva, a od ponoći je ono poskupjelo u odnosu na prošli tjedan. Kako piše portal cijenegoriva.info, spremnik od 50 litara benzina (Eurosupera) u prosjeku je skuplji za dvije kune. Poskupjelo je i dizelsko gorivo pa&hellip;" />
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		<link rel="amphtml" href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/amp/">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Loše vijesti za vozače: Narasle cijene goriva, jedina skupina je prošla najgore" />
+<meta property="og:url" content="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" />
+<meta property="og:description" content="Spremnik od 50 litara benzina od ponoći je u prosjeku skuplji za dvije kune Utorkom se u Hrvatskoj mijenja cijena goriva, a od ponoći je ono poskupjelo u odnosu na prošli tjedan. Kako piše portal c…" />
+<meta property="article:published_time" content="2021-01-05T07:34:14+00:00" />
+<meta property="article:modified_time" content="2021-01-05T07:44:55+00:00" />
+<meta property="og:site_name" content="Net.hr" />
+<meta property="og:image" content="https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?quality=100&amp;strip=all" />
+<meta property="og:image:width" content="669" />
+<meta property="og:image:height" content="429" />
+<meta property="og:locale" content="hr_HR" />
+<meta name="twitter:text:title" content="OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune" />
+<meta name="twitter:image" content="https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?quality=100&#038;strip=all&#038;w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="fb:app_id" content="103100136402693" />
+<meta property="fb:pages" content="86874647886" />
+<meta property="article:publisher" content="https://www.facebook.com/Net.hr" />
+<meta property="article:author" content="https://www.facebook.com/Danas.hr" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="icon" href="https://net.hr/wp-content/uploads/2020/05/cropped-net_icon.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://net.hr/wp-content/uploads/2020/05/cropped-net_icon.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://net.hr/wp-content/uploads/2020/05/cropped-net_icon.png?w=180" />
+<meta name="msapplication-TileImage" content="https://net.hr/wp-content/uploads/2020/05/cropped-net_icon.png?w=270" />
+	<!-- af7bf8cddd0fe677b5ecceef033ed47a -->
+</head>
+
+<body class="post-template-default single single-post postid-2462766 single-format-standard danas tmg-no-cookie">
+		<div id="fb-root"></div>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '103100136402693',
+					xfbml      : true,
+					version    : 'v3.2'
+				});
+			};
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/hr_HR/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window,document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '864000226967467');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1"
+                 src="https://www.facebook.com/tr?id=864000226967467&ev=PageView&noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+<!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ5ZQHC"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="overlay"></div>
+
+<div class="main-container">
+
+	
+<div class="top-menu">
+    <div class="container">
+        <div class="menu-servisni-container"><ul id="menu-servisni" class="menu"><li id="menu-item-534856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-534856"><a href="https://net.hr/">Net.hr</a></li>
+<li id="menu-item-387993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-387993"><a target="_blank" rel="noopener" href="http://freemail.net.hr/">Freemail</a></li>
+<li id="menu-item-1322819" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1322819"><a href="http://sanjarica.net.hr">Sanjarica</a></li>
+<li id="menu-item-388004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-388004"><a href="http://net.hr/igrice/">Net igrice</a></li>
+<li id="menu-item-388013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388013"><a href="https://net.hr/uvjeti_koristenja/">Uvjeti korištenja</a></li>
+<li id="menu-item-388012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388012"><a href="https://net.hr/marketing/">Marketing</a></li>
+<li id="menu-item-388011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388011"><a href="https://net.hr/impressum/">Impressum</a></li>
+</ul></div>    </div>
+</div>
+
+
+<header class="category danas">
+    <div class="container">
+
+        <div class="head">
+            <div class="logo">
+                <a href="https://net.hr">
+                    <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/net_colored_logo.svg" height="40"/>
+                </a>
+            </div>
+            <div class="nav-search">
+                        <form id="google-search" action="https://net.hr/pretrazivanje">
+            <input type="hidden" name="cx" value="partner-pub-2317149376955370:wn57ucrd4ll"/>
+            <input type="hidden" name="cof" value="FORID:10"/>
+            <input type="hidden" name="ie" value="UTF-8"/>
+            <input type="text" name="q" size="31" placeholder="Google pretraživanje"/>
+        </form>
+        <button type="submit" form="google-search" value="Submit"><i class="fa fa-search"></i></button>
+                    </div>
+
+            <div class="freemail">
+                <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/icons/net_ico_freemail.svg" height="22"/> Freemail
+                <a href="https://freemail.net.hr/" target="_blank" class="button button-small">Prijavi se</a>
+            </div>
+        </div>
+
+        <div class="navbar-menu">
+
+            <div class="small-logo">
+                <a href="https://net.hr">
+                    <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/net_icon.svg" height="24"/>
+                </a>
+            </div>
+
+            <div id="hamburger">
+                <div class="bar bar-top"></div>
+                <div class="bar bar-middle"></div>
+                <div class="bar bar-bottom"></div>
+            </div>
+
+            <div class="drop-menu">
+                			<div class="footer-categories">
+				<div class="container cf">
+												<div class="category-container">
+								<a href="https://net.hr/kategorija/danas/">
+									<h4>
+										Vijesti									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/danas/crna-kronika/">
+											Crna kronika										</a>
+																				<a href="https://net.hr/kategorija/danas/hrvatska/">
+											Hrvatska										</a>
+																				<a href="https://net.hr/kategorija/danas/kultura/">
+											Kultura										</a>
+																				<a href="https://net.hr/kategorija/danas/novac/">
+											Novac										</a>
+																				<a href="https://net.hr/kategorija/danas/svijet/">
+											Svijet										</a>
+																				<a href="https://net.hr/kategorija/danas/znanost/">
+											Znanost										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/sport/">
+									<h4>
+										Sport									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/sport/hokej/">
+											Hokej										</a>
+																				<a href="https://net.hr/kategorija/sport/klub-boraca/">
+											Klub boraca										</a>
+																				<a href="https://net.hr/kategorija/sport/kosarka/">
+											Košarka										</a>
+																				<a href="https://net.hr/kategorija/sport/na-rubu-sporta/">
+											Na rubu sporta										</a>
+																				<a href="https://net.hr/kategorija/sport/nogomet/">
+											Nogomet										</a>
+																				<a href="https://net.hr/kategorija/sport/oi-2016/">
+											OI										</a>
+																				<a href="https://net.hr/kategorija/sport/ostali-sportovi/">
+											Ostali sportovi										</a>
+																				<a href="https://net.hr/kategorija/sport/rukomet/">
+											Rukomet										</a>
+																				<a href="https://net.hr/kategorija/sport/skijanje/">
+											Skijanje										</a>
+																				<a href="https://net.hr/kategorija/sport/tenis/">
+											Tenis										</a>
+										                                    <a href="https://www.rezultati.com/" target="_blank">
+                                        Rezultati.com
+                                    </a>
+																</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/webcafe/">
+									<h4>
+										Webcafe									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/webcafe/astronet/">
+											Astronet										</a>
+																				<a href="https://net.hr/kategorija/webcafe/cura-dana/">
+											Cura dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/decko-dana/">
+											Dečko dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/dnevni-horoskop/">
+											Dnevni horoskop										</a>
+																				<a href="https://net.hr/kategorija/webcafe/fora-dana/">
+											Fora dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/forwarduse/">
+											Forwarduše										</a>
+																				<a href="https://net.hr/kategorija/webcafe/komnetar/">
+											Komnetar										</a>
+																				<a href="https://net.hr/kategorija/webcafe/overkloking/">
+											Overkloking										</a>
+																				<a href="https://net.hr/kategorija/webcafe/planet-x/">
+											Planet X										</a>
+																				<a href="https://net.hr/kategorija/webcafe/svastara/">
+											Svaštara										</a>
+																				<a href="https://net.hr/kategorija/webcafe/vic-dana/">
+											Vic dana										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/hot/">
+									<h4>
+										Hot									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/hot/lijepenase/">
+											#lijepenase										</a>
+																				<a href="https://net.hr/kategorija/hot/film/">
+											Film										</a>
+																				<a href="https://net.hr/kategorija/hot/glazba/">
+											Glazba										</a>
+																				<a href="https://net.hr/kategorija/hot/sexy/">
+											Sexy										</a>
+																				<a href="https://net.hr/kategorija/hot/tv/">
+											TV										</a>
+																				<a href="https://net.hr/kategorija/hot/zvijezde/">
+											Zvijezde										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/magazin/">
+									<h4>
+										Magazin									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/magazin/brakveze/">
+											Brak&amp;veze										</a>
+																				<a href="https://net.hr/kategorija/magazin/domvrt/">
+											Dom&amp;vrt										</a>
+																				<a href="https://net.hr/kategorija/magazin/hotspots/">
+											HotSpots										</a>
+																				<a href="https://net.hr/kategorija/magazin/kuhinja/">
+											Kuhinja										</a>
+																				<a href="https://net.hr/kategorija/magazin/kvizovi/">
+											Kvizovi										</a>
+																				<a href="https://net.hr/kategorija/magazin/lijepi_nasi/">
+											Lijepi naši										</a>
+																				<a href="https://net.hr/kategorija/magazin/ljepota/">
+											Ljepota										</a>
+																				<a href="https://net.hr/kategorija/magazin/ljubimci/">
+											Ljubimci										</a>
+																				<a href="https://net.hr/kategorija/magazin/moda/">
+											Moda										</a>
+																				<a href="https://net.hr/kategorija/magazin/muffini/">
+											Muffini										</a>
+																				<a href="https://net.hr/kategorija/magazin/putovanja/">
+											Putovanja										</a>
+																				<a href="https://net.hr/kategorija/magazin/roditeljstvo/">
+											Roditeljstvo										</a>
+																				<a href="https://net.hr/kategorija/magazin/zdravlje/">
+											Zdravlje										</a>
+																				<a href="https://net.hr/kategorija/magazin/zdravlje-i-ljepota/">
+											Zdravlje i ljepota										</a>
+																				<a href="https://net.hr/kategorija/magazin/zivotne-ispovijesti/">
+											Životne ispovijesti										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/tehnoklik/">
+									<h4>
+										Tehnoklik									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/tehnoklik/gadgeti/">
+											Gadgeti										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/mobile/">
+											Mobile										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/technobiz/">
+											Technobiz										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/vijesti-tehnoklik/">
+											Vijesti										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/web-social/">
+											Web &amp; social										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/auto/">
+									<h4>
+										Auto									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/auto/automoto/">
+											Automoto										</a>
+																				<a href="https://net.hr/kategorija/auto/automoto-sport/">
+											automoto-sport										</a>
+																				<a href="https://net.hr/kategorija/auto/bicikli/">
+											Bicikli										</a>
+																				<a href="https://net.hr/kategorija/auto/funmobil/">
+											Funmobil										</a>
+																				<a href="https://net.hr/kategorija/auto/nova-vozila/">
+											Nova vozila										</a>
+																				<a href="https://net.hr/kategorija/auto/techmobil/">
+											Techmobil										</a>
+																				<a href="https://net.hr/kategorija/auto/vijesti/">
+											Vijesti										</a>
+																	</div>
+										</div>
+			</div>
+			            </div>
+
+            <div class="menu-danas-container"><ul id="menu-danas" class="menu"><li id="menu-item-5351" class="primary menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-5351"><a href="https://net.hr/kategorija/danas/">Vijesti</a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-50"><a href="https://net.hr/kategorija/danas/hrvatska/">Hrvatska</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="https://net.hr/kategorija/danas/svijet/">Svijet</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49"><a href="https://net.hr/kategorija/danas/crna-kronika/">Crna kronika</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-51"><a href="https://net.hr/kategorija/danas/kultura/">Kultura</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="https://net.hr/kategorija/danas/novac/">Novac</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="https://net.hr/kategorija/danas/znanost/">Znanost</a></li>
+</ul></div>
+            <div class="nav-icons">
+                <div class="icon">
+                    <a href="https://sanjarica.net.hr/" target="_blank">
+                        <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/icons/net_ico_sanjarica.svg" height="22"/> Sanjarica
+                    </a>
+                </div>
+                <div class="icon">
+                    <a href="https://finirecepti.net.hr/" target="_blank">
+                        <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/icons/net_ico_recepti.svg" height="22"/> Recepti
+                    </a>
+                </div>
+                <div class="icon">
+                    <a href="http://webshop.net.hr/" target="_blank">
+                        <img src="https://net.hr/wp-content/themes/adriaticmedia-nethr/img/icons/net_ico_webshop.svg" height="22"/> Webshop
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<div id="overlay-dark"></div>
+	<div class="content-container cf">
+		<div class="top-zone">
+								<div class="billboard">
+						<div class="banner">
+							      <div id='nethr_desktop_billboard_v1'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_billboard_v1');
+            });
+          </script>
+      </div>
+    						</div>
+					</div>
+					
+		</div>
+		<a href="https://korona.net.hr" class="top-banner">
+                <img src="https://net.hr/wp-content/uploads/2020/10/korona_specijal_994x150.jpg?quality=100&strip=all" alt="banner">
+              </a>
+	<div class="container single cf">
+    <div class="single-inner cf">
+		<div class="section-header">
+			<div class="section-titles">
+								<a href="https://net.hr/kategorija/danas/hrvatska/"
+				   class="active">Hrvatska</a>
+                			</div>
+			
+<div class="socials">
+			<div class="c2action"><!-- as bg --></div>
+		<a href="https://www.facebook.com/Danas.hr" target="_blank" class="fb" data-social-network="Facebook" data-social-action="click" data-social-target="https://www.facebook.com/Danas.hr"><i
+			class="fa fa-facebook"></i></a>
+	<a href="https://twitter.com/danashr" target="_blank" class="tw" data-social-network="Twitter" data-social-action="click" data-social-target="https://twitter.com/danashr"><i
+			class="fa fa-twitter"></i></a>
+	<a href="https://net.hr/kategorija/danas/feed/" target="_blank" class="go"><i
+			class="fa fa-rss"></i></a>
+	
+</div>		</div>
+
+		<div class="page-grid single-article">
+
+			
+                				<h3 class="overtitle">NOVE CIJENE</h3>
+                				<h1 class="title">OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune</h1>
+
+				<div class="article-meta cf">
+					<div class="socials socials-count">
+
+	<span>
+		<a href="https://www.facebook.com/dialog/share?app_id=103100136402693&display=popup&href=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&redirect_uri=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F" target="_blank" class="fb" data-social-network="Facebook" data-social-action="share" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"><i
+				class="fa fa-facebook"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+	<span>
+		<a href="https://twitter.com/intent/tweet?counturl=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&text=OD+PONO%C4%86I+SU+U+HRVATSKOJ+NARASLE+CIJENE+GORIVA%3A+Prosje%C4%8Dni+spremnik+benzina+skuplji+je+za+dvije+kune&url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&via=Nethr" target="_blank" class="tw" data-social-network="Twitter" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" data-social-action="tweet"><i
+				class="fa fa-twitter"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+	<span>
+	<a href="https://plus.google.com/share?hl=hr&url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F" target="_blank" class="go" data-social-network="GooglePlus" data-social-action="share" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"><i
+				class="fa fa-google-plus"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+</div>
+					<div class="metabox">
+					<span>Foto: Hrvoje Jelavić/PIXSELL</span>
+						<span>Autor: Danas.hr </span>
+						<span class="post-date"> 05.01.2021</span>
+						<div class="post-time"><i class="fa fa-clock-o"></i>8:34</div>
+					</div>
+				</div>
+											<div class="featured-img thumb">
+							<img width="670" height="400" src="https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?quality=100&amp;strip=all&amp;w=670&amp;h=400&amp;crop=1" class="attachment-single size-single wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 670px) 100vw, 670px" data-lazy-src="https://net.hr/wp-content/uploads/2015/10/pxl_130115_9734837.jpg?quality=100&amp;strip=all&amp;w=670&amp;h=400&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />							</div>
+											<div class="article-content" id="__xclaimwords_wrapper">
+					<h4>Spremnik od 50 litara benzina od ponoći je u prosjeku skuplji za dvije kune</h4>
+<p>Utorkom se u Hrvatskoj mijenja cijena goriva, a od ponoći je ono poskupjelo u odnosu na prošli tjedan. Kako <a href="http://cijenegoriva.info/" target="_blank" rel="noopener">piše portal cijenegoriva.info</a>, spremnik od 50 litara benzina (Eurosupera) u prosjeku je skuplji za dvije kune.</p>
+<div class="banner banner-size3">
+<div id='nethr_desktop_intext_v1'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_intext_v1');
+            });
+          </script>
+      </div>
+</p></div>
+<p>Poskupjelo je i dizelsko gorivo pa je prosječna cijena spremnika dizela viša za jednu kunu u odnosu na prošlotjednu. Najviše je poskupio autoplin. Prosječni spremnik LPG-a skuplji je za 5,5 kuna.</p>
+<div class="banner banner-size3">
+<div id='nethr_desktop_intext_v4'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_intext_v4');
+            });
+          </script>
+      </div>
+</p></div>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Podijeli:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" data-layout="button_count"></div></li><li class="share-messenger"><div class="fb-send" data-href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"></div></li><li class="share-twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" data-text="OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune"  >Tweet</a></li><li class="share-jetpack-whatsapp"><a rel="nofollow noopener noreferrer" data-shared="" class="share-jetpack-whatsapp sd-button" href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/?share=jetpack-whatsapp" target="_blank" title="Click to share on WhatsApp"><span>WhatsApp</span></a></li><li class="share-end"></li></ul></div></div></div>					<div class="tags">
+						<a href="https://net.hr/tema/benzin/" rel="tag">benzin</a> <a href="https://net.hr/tema/cijene-goriva/" rel="tag">cijene goriva</a> <a href="https://net.hr/tema/gorivo/" rel="tag">gorivo</a> <a href="https://net.hr/tema/poskupljenje/" rel="tag">poskupljenje</a> <a href="https://net.hr/tema/vozaci/" rel="tag">vozači</a>					</div>
+				</div>
+								<div class="article-meta cf">
+					<div class="socials socials-count">
+
+	<span>
+		<a href="https://www.facebook.com/dialog/share?app_id=103100136402693&display=popup&href=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&redirect_uri=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F" target="_blank" class="fb" data-social-network="Facebook" data-social-action="share" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"><i
+				class="fa fa-facebook"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+	<span>
+		<a href="https://twitter.com/intent/tweet?counturl=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&text=OD+PONO%C4%86I+SU+U+HRVATSKOJ+NARASLE+CIJENE+GORIVA%3A+Prosje%C4%8Dni+spremnik+benzina+skuplji+je+za+dvije+kune&url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F&via=Nethr" target="_blank" class="tw" data-social-network="Twitter" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/" data-social-action="tweet"><i
+				class="fa fa-twitter"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+	<span>
+	<a href="https://plus.google.com/share?hl=hr&url=https%3A%2F%2Fnet.hr%2Fdanas%2Fhrvatska%2Fod-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune%2F" target="_blank" class="go" data-social-network="GooglePlus" data-social-action="share" data-social-target="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"><i
+				class="fa fa-google-plus"></i></a>
+		<!--<label class="count-no"></label>-->
+	</span>
+
+</div>
+					<div class="metabox">
+					<span>Foto: Hrvoje Jelavić/PIXSELL</span>
+						<span>Autor: Danas.hr </span>
+						<span><i class="fa fa-clock-o"></i> 08:34 05.01.2021</span>
+					</div>
+				</div>
+			
+		</div>
+		<div class="sidebar single-sidebar single-sidebar-1">
+								<div class="banner banner-size3">
+						      <div id='nethr_desktop_300x250_v1'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_300x250_v1');
+            });
+          </script>
+      </div>
+    					</div>
+					            <div class="widget najcitanije-widget">
+                <div class="widget-header cf">
+                    <h2 class="section-title active">Najčitanije</h2>
+                    <h2 class="section-title latest">Najnovije</h2>
+                </div>
+	            <div class="tab tab_1">
+                <div class="widget-body gray cf">
+	                <article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/hrvatska/cini-se-da-stize-prava-zima-meteorolog-objavio-tjednu-vremensku-prognozu-evo-gdje-i-kada-mozemo-ocekivati-snjezne-pahulje/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/PXL_040116_12473112.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					TEMPERATURE U PADU				</h2>
+
+				<h1 class="title">
+					ČINI SE DA DOLAZI PRAVA ZIMA: Objavljena je tjedna vremenska prognoza; Evo gdje i kada možemo očekivati snježne pahulje</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/hrvatska/video-cenzura-na-hrt-u-tijekom-javljanja-uzivo-novinarka-prekinula-covjeka-koji-je-pitao-gdje-su-kontejneri-iz-gunje/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/hrt.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/hrt.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/hrt.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/hrt.jpg?resize=165,100 165w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/hrt.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					UF...				</h2>
+
+				<h1 class="title">
+					JAO, HRT&#8230; Jeste li vidjeli ovu snimku javljanja uživo u kojem novinarka prekida čovjeka koji je pitao gdje su kontejneri iz Gunje?</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf video">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/hrvatska/jutros-se-probudio-zagrebacki-rasjed-seizmolog-objasnjava-cesto-blizina-potresa-jednog-podrucja-aktivira-druge-rasjede/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/kuk.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/kuk.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/kuk.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/kuk.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/kuk.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/kuk.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+									<div class="article-icon"><i class="fa fa-play"></i> Video
+					</div>
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					NISU DIREKTNO POVEZANI				</h2>
+
+				<h1 class="title">
+					U NEDJELJU SE &#8216;PROBUDIO&#8217; ZAGREBAČKI RASJED: Seizmolog objašnjava: &#8216;Često blizina potresa jednog područja aktivira druge rasjede&#8217;</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/svijet/hoce-li-oni-koji-se-cijepe-biti-privilegirani-velika-rasprava-u-ekonomski-najmocnijoj-zemlji-europe-stize-veliki-test-za-citavu-naciju/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/profimedia-0566958328-e1609507044266.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					KORONA DUGOVI				</h2>
+
+				<h1 class="title">
+					HOĆE LI ONI KOJI SE CIJEPE BITI PRIVILEGIRANI? Velika rasprava u ekonomski najmoćnijoj zemlji Europe, stiže veliki test za čitavu naciju</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/hrvatska/tlo-na-baniji-i-dalje-ne-miruje-prilicno-jak-potres-nocas-zatresao-petrinju-i-okolicu-epicentar-blizu-grada/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?resize=670,400 670w, https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?resize=740,437 740w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/eq3athtwmam-2pt_TxT4a23.png?w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					PONOVNO PODRHTAVANJE				</h2>
+
+				<h1 class="title">
+					PETRINJU I OKOLICU JUTROS JE POGODIO NOVI JAČI POTRES; Šefica seizmološke službe: Bio je 4,2 po Richteru</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/hrvatska/markotic-procijenila-kada-mozemo-ocekivati-popustanje-covida-19-manje-je-pacijenata-u-intezivnoj-a-klinicke-slike-su-blaze/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2020/12/markotic-2.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/12/markotic-2.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/12/markotic-2.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/12/markotic-2.jpg?resize=165,100 165w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2020/12/markotic-2.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					KADA ĆEMO ODAHNUTI?				</h2>
+
+				<h1 class="title">
+					MARKOTIĆ PROCIJENILA KADA MOŽEMO OČEKIVATI POPUŠTANJE COVIDA-19: &#8216;Manje je pacijenata u intezivnoj, a kliničke slike su blaže&#8217;</h1>
+			</div>
+		</a>
+
+	</div>
+</article>                </div>
+	            </div>
+	            <div class="tab tab_2">
+
+		            <div class="widget-body gray cf">
+			            <article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/svijet/unatoc-pandemiji-jedna-poznata-agencija-vjeruje-da-nas-na-ljeto-ceka-turisticki-boom-zudnja-za-tim-je-enormna/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					IMA LI RAZLOGA ZA OPTIMIZAM?				</h2>
+
+				<h1 class="title">
+					UNATOČ PANDEMIJI, JEDNA POZNATA AGENCIJA VJERUJE DA NAS NA LJETO ČEKA TURISTIČKI BOOM: &#8216;Žudnja za tim je enormna&#8217;</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/sport/juventus-pronasao-neocekivano-pojacanje-za-povratak-na-vrh-stara-dama-zeli-dovesti-pravog-veterana-najstarijeg-strijelca-za-talijansku-reprezentaciju-u-povijesti/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle sport">
+					SERIE A				</h2>
+
+				<h1 class="title">
+					JUVENTUS PRONAŠAO NEOČEKIVANO POJAČANJE ZA POVRATAK NA VRH?: Stara dama želi dovesti pravog veterana, najstarijeg strijelca za talijansku reprezentaciju u povijesti</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf video">
+	<div class="inner cf">
+
+		<a href="https://net.hr/video/potres-u-brojkama-spaseno-30-ljudi-ispod-rusevina-unisteno-3000-kuca-stotine-osoba-spava-po-dvoranama-i-satorima/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+									<div class="article-icon"><i class="fa fa-play"></i> Video
+					</div>
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					video				</h2>
+
+				<h1 class="title">
+					Potres u brojkama: Spašeno 30 ljudi ispod ruševina, uništeno 3000 kuća, stotine osoba spava po dvoranama i šatorima</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/sport/nogomet/nakon-bilica-wba-napusta-jos-jedan-hrvat-trener-pokazao-izlazna-vrata-nasem-igracu-zna-se-gdje-ce-nastaviti-karijeru/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle sport">
+					MOŽDA JE I BOLJE				</h2>
+
+				<h1 class="title">
+					NAKON BILIĆA WBA NAPUŠTA JOŠ JEDAN HRVAT: Trener pokazao izlazna vrata našem igraču. Zna se gdje će nastaviti karijeru</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/danas/znanost/da-vi-ste-krivi-za-ovo-satelitske-snimke-otkrivaju-zastrasujuce-i-tuzne-razmjere-klimatskih-promjena/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle danas">
+					PLANET PRIJE-POSLIJE				</h2>
+
+				<h1 class="title">
+					DA, VI STE KRIVI ZA OVO: Satelitske snimke otkrivaju zastrašujuće i tužne razmjere klimatskih promjena</h1>
+			</div>
+		</a>
+
+	</div>
+</article><article class="article-3 cf ">
+	<div class="inner cf">
+
+		<a href="https://net.hr/sport/preminuo-bob-brett-legendarni-australski-trener-umro-u-68-godini-s-beckerom-je-dosao-do-svjetskog-vrha-ivanisevic-ga-pozvao-na-mitsko-finale-wimbledona/" target="_top">
+
+			<div class="thumb">
+                <img width="100" height="60" src="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1" class="attachment-article-3 size-article-3 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg 417w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=150,90 150w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=300,181 300w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=165,100 165w" data-lazy-sizes="(max-width: 100px) 100vw, 100px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?quality=100&amp;strip=all&amp;w=100&amp;h=60&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				
+			</div>
+
+			<div class="article-text">
+								<h2 class="overtitle sport">
+					ODLAZAK VELIKANA				</h2>
+
+				<h1 class="title">
+					PREMINUO BOB BRETT: Legendarni australski trener umro u 68. godini; s Beckerom je došao do svjetskog vrha, Gorana doveo na drugo mjesto na ATP ljestvici</h1>
+			</div>
+		</a>
+
+	</div>
+</article>		            </div>
+	            </div>
+            </div>
+                <div id="net.hr_300x600_desktop-cnt">
+      <script>
+      (function(){
+        if (document.querySelector('script[src*="//lib.wtg-ads.com/lib.min.js"]')) {
+          return;
+        }
+        var domain = 'www.net.hr';
+        var slot = "net.hr_300x600_desktop";
+
+        if(window.self !== window.parent) {
+          var d = top.document, w = parent.window;
+          var parent = this.frameElement;
+          parent.style.display = "none";
+        } else {
+          var d = document, w = window, parent = null;
+
+          if(typeof d.currentScript !== 'undefined'){
+            parent = d.currentScript;
+            if(parent == null) {
+              parent = document.getElementById(slot+'-cnt');
+            }
+          } else {
+            parent = d.body.lastElementChild;
+          }
+        }
+
+        d.addEventListener('wtgLoaded', function (e) {
+          if(typeof w.w2g.single === 'function') {
+            w.w2g.single(domain, slot, parent);
+          }
+        }, false);
+
+
+        if(w.w2gLoaded === undefined) {
+          w.w2gLoaded = 0;
+        }
+
+        if(w.w2gLoaded < 1 && w.w2g === undefined) {
+
+          var element = d.createElement('script'), head = d.head || d.getElementsByTagName('head')[0];
+          element.type = 'text/javascript';
+          element.async = true;
+          element.src = 'https://lib.wtg-ads.com/lib.single.wtg.min.js';
+          head.appendChild(element);
+
+          w.w2gLoaded++;
+        }
+
+        if(w.w2g !== undefined && typeof w.w2g.single === 'function') {
+          w.w2g.single(domain, slot, parent);
+        }
+      })();
+
+      </script>
+    </div>
+        <div id="net.hr_300x250_desktop-cnt">
+      <script>
+      (function(){
+        if (document.querySelector('script[src*="//lib.wtg-ads.com/lib.min.js"]')) {
+          return;
+        }
+        var domain = 'www.net.hr';
+        var slot = "net.hr_300x250_desktop";
+
+        if(window.self !== window.parent) {
+          var d = top.document, w = parent.window;
+          var parent = this.frameElement;
+          parent.style.display = "none";
+        } else {
+          var d = document, w = window, parent = null;
+
+          if(typeof d.currentScript !== 'undefined'){
+            parent = d.currentScript;
+            if(parent == null) {
+              parent = document.getElementById(slot+'-cnt');
+            }
+          } else {
+            parent = d.body.lastElementChild;
+          }
+        }
+
+        d.addEventListener('wtgLoaded', function (e) {
+          if(typeof w.w2g.single === 'function') {
+            w.w2g.single(domain, slot, parent);
+          }
+        }, false);
+
+
+        if(w.w2gLoaded === undefined) {
+          w.w2gLoaded = 0;
+        }
+
+        if(w.w2gLoaded < 1 && w.w2g === undefined) {
+
+          var element = d.createElement('script'), head = d.head || d.getElementsByTagName('head')[0];
+          element.type = 'text/javascript';
+          element.async = true;
+          element.src = 'https://lib.wtg-ads.com/lib.single.wtg.min.js';
+          head.appendChild(element);
+
+          w.w2gLoaded++;
+        }
+
+        if(w.w2g !== undefined && typeof w.w2g.single === 'function') {
+          w.w2g.single(domain, slot, parent);
+        }
+      })();
+
+      </script>
+    </div>
+    			<div class="widget foto-news video-feed">
+				<div class="widget-header cf">
+					<h2 class="section-title">Video</h2>
+											<a href="https://net.hr/type/video/" class="more">
+							video							<i class="fa fa-chevron-right"></i>
+						</a>
+									</div>
+
+				<div class="widget-body cf">
+													<article class="widget-article big">
+									<a href="https://net.hr/video/potres-u-brojkama-spaseno-30-ljudi-ispod-rusevina-unisteno-3000-kuca-stotine-osoba-spava-po-dvoranama-i-satorima/">
+										<div class="thumb">
+											<img width="300" height="170" src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1" class="attachment-feed-2 size-feed-2 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=300,170 300w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=996,560 996w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />											<div class="shaddow"></div>
+											<h3 class="title">
+												Potres u brojkama: Spašeno 30 ljudi ispod ruševina, uništeno 3000 kuća, stotine osoba spava po dvoranama i šatorima											</h3>
+										</div>
+									</a>
+								</article>
+								<article class="widget-article">
+								<a href="https://net.hr/video/kao-i-u-svakoj-ozbiljnoj-banana-drzavi-uskok-je-istragu-objavio-nakon-sto-je-to-zatrazio-premijer-tako-da-ce-i-taj-odgovor-biti-banana-odgovor/">
+									<div class="thumb">
+										<img width="300" height="170" src="https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1" class="attachment-feed-2 size-feed-2 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg 3840w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=150,84 150w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=300,170 300w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=768,432 768w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=669,376 669w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=1536,864 1536w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=2048,1152 2048w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=670,377 670w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=996,560 996w, https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?resize=1200,675 1200w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/krov-obnova.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										<div class="shaddow"></div>
+										<h3 class="title">
+											Kao i u svakoj ozbiljnoj banana državi Uskok je istragu objavio nakon što je to zatražio premijer tako da će i taj odgovor biti banana odgovor										</h3>
+									</div>
+								</a>
+								</article><article class="widget-article">
+								<a href="https://net.hr/video/zdravstvo-u-banovini-pacijenti-sa-sepsom-u-satoru-ostecene-bolnice-i-ambulante/">
+									<div class="thumb">
+										<img width="300" height="170" src="https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1" class="attachment-feed-2 size-feed-2 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg 3840w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=150,84 150w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=300,170 300w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=768,432 768w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=669,376 669w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=1536,864 1536w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=2048,1152 2048w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=670,377 670w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=996,560 996w, https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?resize=1200,675 1200w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/bolnica-sisak.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										<div class="shaddow"></div>
+										<h3 class="title">
+											Zdravstvo u Banovini: Pacijenti sa sepsom u šatoru, oštećene bolnice i ambulante										</h3>
+									</div>
+								</a>
+								</article><article class="widget-article">
+								<a href="https://net.hr/video/ranjena-banovina-zove-u-pomoc-a-pomazu-svi-od-navijaca-do-gradana-od-radnika-do-poduzetnika/">
+									<div class="thumb">
+										<img width="300" height="170" src="https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1" class="attachment-feed-2 size-feed-2 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg 3840w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=150,84 150w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=300,170 300w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=768,432 768w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=669,376 669w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=1536,864 1536w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=2048,1152 2048w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=670,377 670w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=996,560 996w, https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?resize=1200,675 1200w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/vatrogasci-pomoc-.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										<div class="shaddow"></div>
+										<h3 class="title">
+											Ranjena Banovina zove u pomoć, a pomažu svi: Od navijača do građana, od radnika do poduzetnika										</h3>
+									</div>
+								</a>
+								</article><article class="widget-article">
+								<a href="https://net.hr/video/kako-je-to-zivjeti-u-kontejneru-najbolje-znaju-zagrebacke-obitelji-u-hladnom-metalnom-domu-borave-skoro-godinu-dana/">
+									<div class="thumb">
+										<img width="300" height="170" src="https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1" class="attachment-feed-2 size-feed-2 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg 3840w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=150,84 150w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=300,170 300w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=768,432 768w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=669,376 669w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=1536,864 1536w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=2048,1152 2048w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=670,377 670w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=996,560 996w, https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?resize=1200,675 1200w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/potres-obnova.jpg?quality=100&amp;strip=all&amp;w=300&amp;h=170&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										<div class="shaddow"></div>
+										<h3 class="title">
+											Kako je to živjeti u kontejneru, najbolje znaju zagrebačke obitelji: U hladnom, metalnom domu borave skoro godinu dana										</h3>
+									</div>
+								</a>
+								</article>				</div>
+			</div>
+						<a href="https://net.hr/vase-vijesti-na-netu/" class="vase-vijesti-clanak"></a>
+		</div>
+        <script>
+            jQuery(document).ready(function() {
+            jQuery('.single-sidebar').stick_in_parent({
+                offset_top: 100,
+                spacer: false
+            });
+            })
+        </script>
+
+
+
+    </div>
+        <div class="single-inner cf">
+         <div class="page-grid single-article">
+	        	<div id="linkerWidget">
+					<div class="lwdgt" data-wid="219"></div>			<script async src="https://linker.hr/lw.js"></script>
+			</div>
+					<div class="widget widget-fb-comments">
+			<h2 class="section-title">Imaš komentar?</h2>
+			<div class="fb-comments"
+				 data-width="100%"
+				 data-numposts="5"
+				 data-colorscheme="light"
+				 data-href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/"></div>
+		</div>
+					<div class="banner banner-size3">
+						      <div id='nethr_desktop_intext_v4'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_intext_v4');
+            });
+          </script>
+      </div>
+    					</div>
+					
+			<div class="more-categories-widget widget">
+
+				<h2 class="section-title">Još iz rubrike</h2>
+				<div class="category-feed more-from-category cf">
+					
+	<article class="article-feed  cf"
+         data-id="2461614" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/danas/svijet/unatoc-pandemiji-jedna-poznata-agencija-vjeruje-da-nas-na-ljeto-ceka-turisticki-boom-zudnja-za-tim-je-enormna/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/danas/svijet/unatoc-pandemiji-jedna-poznata-agencija-vjeruje-da-nas-na-ljeto-ceka-turisticki-boom-zudnja-za-tim-je-enormna/">
+
+										<h2 class="overtitle svijet">
+						IMA LI RAZLOGA ZA OPTIMIZAM?					</h2>
+					
+					<h1 class="title">UNATOČ PANDEMIJI, JEDNA POZNATA AGENCIJA VJERUJE DA NAS NA LJETO ČEKA TURISTIČKI BOOM: &#8216;Žudnja za tim je enormna&#8217;</h1>
+				</a>
+
+				<p class="undertitle">11:42 05.01.2021					<a href="https://net.hr/kategorija/danas/svijet/">Svijet</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+	<article class="article-feed  cf"
+         data-id="2463003" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/promo/promo/mladoj-obitelji-iz-gline-germania-donirala-mobilni-dom/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/slika2.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/slika2.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/slika2.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/slika2.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/slika2.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/slika2.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/promo/promo/mladoj-obitelji-iz-gline-germania-donirala-mobilni-dom/">
+
+										<h2 class="overtitle promo">
+						DONACIJA					</h2>
+					
+					<h1 class="title">Mladoj obitelji iz Gline Germania donirala mobilni dom</h1>
+				</a>
+
+				<p class="undertitle">10:45 05.01.2021					<a href="https://net.hr/kategorija/promo/">promo</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+	<article class="article-feed  cf"
+         data-id="2463035" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/danas/znanost/da-vi-ste-krivi-za-ovo-satelitske-snimke-otkrivaju-zastrasujuce-i-tuzne-razmjere-klimatskih-promjena/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/danas/znanost/da-vi-ste-krivi-za-ovo-satelitske-snimke-otkrivaju-zastrasujuce-i-tuzne-razmjere-klimatskih-promjena/">
+
+										<h2 class="overtitle znanost">
+						PLANET PRIJE-POSLIJE					</h2>
+					
+					<h1 class="title">DA, VI STE KRIVI ZA OVO: Satelitske snimke otkrivaju zastrašujuće i tužne razmjere klimatskih promjena</h1>
+				</a>
+
+				<p class="undertitle">11:20 05.01.2021					<a href="https://net.hr/kategorija/danas/znanost/">Znanost</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+	<article class="article-feed  cf"
+         data-id="2462161" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/danas/hrvatska/u-ovom-istarskom-kampu-cak-i-sada-ima-turista-iz-njemacke-ne-bojimo-se-koronavirusa-pridrzavamo-se-mjera/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/kamp-Kazela.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/kamp-Kazela.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/kamp-Kazela.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/kamp-Kazela.jpg?resize=165,100 165w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/kamp-Kazela.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/danas/hrvatska/u-ovom-istarskom-kampu-cak-i-sada-ima-turista-iz-njemacke-ne-bojimo-se-koronavirusa-pridrzavamo-se-mjera/">
+
+										<h2 class="overtitle hrvatska">
+						ZIMA U MEDULINU					</h2>
+					
+					<h1 class="title">U OVOM ISTARSKOM KAMPU ČAK I SADA IMA TURISTA IZ NJEMAČKE: &#8216;Ne bojimo se koronavirusa, pridržavamo se mjera&#8217;</h1>
+				</a>
+
+				<p class="undertitle">11:02 05.01.2021					<a href="https://net.hr/kategorija/danas/hrvatska/">Hrvatska</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+	<article class="article-feed  cf"
+         data-id="2463000" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/danas/crna-kronika/diler-kod-zadra-pokusao-pregaziti-policajce-ptreazili-su-mu-stan-pa-pronasli-oruzje-i-drogu/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2020/12/PXL_231220_31253785-e1608928333627.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/danas/crna-kronika/diler-kod-zadra-pokusao-pregaziti-policajce-ptreazili-su-mu-stan-pa-pronasli-oruzje-i-drogu/">
+
+										<h2 class="overtitle crna-kronika">
+						PUCALI U GUME					</h2>
+					
+					<h1 class="title">DILER KOD ZADRA POKUŠAO PREGAZITI POLICAJCE: Ptreažili su mu stan pa pronašli oružje i drogu</h1>
+				</a>
+
+				<p class="undertitle">11:01 05.01.2021					<a href="https://net.hr/kategorija/danas/crna-kronika/">Crna kronika</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+	<article class="article-feed  cf"
+         data-id="2462957" data-layout="feed-1">
+		<div class="inner cf">
+			
+			<a href="https://net.hr/danas/hrvatska/racune-za-struju-cemo-rijesiti-milosevic-pozvao-sve-na-potresom-pogodenom-podrucju-da-se-griju-koliko-je-potrebno/">
+				<div class="thumb">
+					<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/PXL_150720_29544090.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />									</div>
+			</a>
+
+			<div class="article-text">
+				<a href="https://net.hr/danas/hrvatska/racune-za-struju-cemo-rijesiti-milosevic-pozvao-sve-na-potresom-pogodenom-podrucju-da-se-griju-koliko-je-potrebno/">
+
+										<h2 class="overtitle hrvatska">
+						DOBRA VIJEST					</h2>
+					
+					<h1 class="title">&#8216;RAČUNE ZA STRUJU ĆEMO RIJEŠITI&#8217;: Milošević pozvao sve na potresom pogođenom području da se griju koliko je potrebno</h1>
+				</a>
+
+				<p class="undertitle">10:26 05.01.2021					<a href="https://net.hr/kategorija/danas/hrvatska/">Hrvatska</a>
+				</p>
+			</div>
+
+		</div>
+	</article>
+
+	
+				</div>
+			</div>
+			            <div class="embed-container">
+                    <iframe id="embed-content" src="https://embed.rtl.hr/regionalni-portali/" frameborder="0" scrolling="no">
+        </iframe>
+            </div>
+                        </div>
+        </div>
+					<div class="standard-widget widget more-news inline six cf">
+				<h2 class="section-title">Pročitajte i ovo</h2>
+
+				<div class="widget-body cf">
+					
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/danas/svijet/unatoc-pandemiji-jedna-poznata-agencija-vjeruje-da-nas-na-ljeto-ceka-turisticki-boom-zudnja-za-tim-je-enormna/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2020/09/PXL_150820_29824248.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle">IMA LI RAZLOGA ZA OPTIMIZAM?</h3>
+											<h2 class="title">UNATOČ PANDEMIJI, JEDNA POZNATA AGENCIJA VJERUJE DA NAS NA LJETO ČEKA TURISTIČKI BOOM: &#8216;Žudnja za tim je enormna&#8217;</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+						
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/sport/juventus-pronasao-neocekivano-pojacanje-za-povratak-na-vrh-stara-dama-zeli-dovesti-pravog-veterana-najstarijeg-strijelca-za-talijansku-reprezentaciju-u-povijesti/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2020/08/profimedia-0419174757.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle">SERIE A</h3>
+											<h2 class="title">JUVENTUS PRONAŠAO NEOČEKIVANO POJAČANJE ZA POVRATAK NA VRH?: Stara dama želi dovesti pravog veterana, najstarijeg strijelca za talijansku reprezentaciju u povijesti</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+						
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/video/potres-u-brojkama-spaseno-30-ljudi-ispod-rusevina-unisteno-3000-kuca-stotine-osoba-spava-po-dvoranama-i-satorima/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/danas-danas-danas.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle"></h3>
+											<h2 class="title">Potres u brojkama: Spašeno 30 ljudi ispod ruševina, uništeno 3000 kuća, stotine osoba spava po dvoranama i šatorima</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+						
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/sport/nogomet/nakon-bilica-wba-napusta-jos-jedan-hrvat-trener-pokazao-izlazna-vrata-nasem-igracu-zna-se-gdje-ce-nastaviti-karijeru/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/profimedia-0546125462.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle">MOŽDA JE I BOLJE</h3>
+											<h2 class="title">NAKON BILIĆA WBA NAPUŠTA JOŠ JEDAN HRVAT: Trener pokazao izlazna vrata našem igraču. Zna se gdje će nastaviti karijeru</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+						
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/danas/znanost/da-vi-ste-krivi-za-ovo-satelitske-snimke-otkrivaju-zastrasujuce-i-tuzne-razmjere-klimatskih-promjena/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=165,100 165w, https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?resize=670,400 670w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/FotoJet-1.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle">PLANET PRIJE-POSLIJE</h3>
+											<h2 class="title">DA, VI STE KRIVI ZA OVO: Satelitske snimke otkrivaju zastrašujuće i tužne razmjere klimatskih promjena</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+						
+							<article class="widget-article">
+								<div class="inner">
+									<a href="https://net.hr/sport/preminuo-bob-brett-legendarni-australski-trener-umro-u-68-godini-s-beckerom-je-dosao-do-svjetskog-vrha-ivanisevic-ga-pozvao-na-mitsko-finale-wimbledona/">
+										<div class="thumb">
+											<img width="165" height="100" src="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1" class="attachment-feed-1 size-feed-1 wp-post-image jetpack-lazy-image" alt="" loading="lazy" data-lazy-srcset="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg 417w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=150,90 150w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=300,181 300w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=100,60 100w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=200,120 200w, https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?resize=165,100 165w" data-lazy-sizes="(max-width: 165px) 100vw, 165px" data-lazy-src="https://net.hr/wp-content/uploads/2021/01/brett-ConvertImage.jpg?quality=100&amp;strip=all&amp;w=165&amp;h=100&amp;crop=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />										</div>
+										<div class="article-text">
+											<h3 class="overtitle">ODLAZAK VELIKANA</h3>
+											<h2 class="title">PREMINUO BOB BRETT: Legendarni australski trener umro u 68. godini; s Beckerom je došao do svjetskog vrha, Gorana doveo na drugo mjesto na ATP ljestvici</h2>
+										</div>
+									</a>
+								</div>
+							</article>
+										</div>
+			</div>
+
+			                <div class="widget home-widget webshop-widget widget-wide cf">
+                    <div class="widget-header cf">
+                        <h2 class="section-title">
+                            <a href="http://webshop.net.hr"
+                               target="_blank"><img
+                                    src="https://net.hr/wp-content/uploads/2016/11/net_webshop_logo1.png"
+                                    height="30"/></a>
+                        </h2>
+                    </div>
+                    <div class="widget-body cf">
+                                                    <article class="article-2">
+                                <div class="inner">
+
+                                    <a href="http://bit.ly/3aoQfaG"
+                                       target="_blank">
+                                        <div class="thumb">
+                                            <img
+                                                src="https://webshop.net.hr/wp-content/uploads/2020/12/Lernelingu-net.hr_.jpg"
+                                                width="186" height="119">
+                                        </div>
+                                    </a>
+                                    <div class="article-text">
+                                        <h2 class="overtitle danas">
+                                            Besplatna dostava                                        </h2>
+                                        <a href="http://bit.ly/3aoQfaG" target="_blank">
+                                            <h1 class="title">
+                                                Lernelingu – knjiga za brzo učenje njemačkog jezika                                            </h1>
+                                        </a>
+                                        <div class="prices cf">
+	                                                                                    <div class="left price"><span class="red">299 kn</span> / <span>599 kn</span></div>
+			                                                                        </div>
+                                        <p class="description">
+                                             Najbolja knjiga u pravi trenutak za učenje njemačkog jezika!                                        </p>
+                                        <a href="http://bit.ly/3aoQfaG" class="btn">Kupi ovdje</a>
+                                    </div>
+
+                                </div>
+                            </article>
+                                                    <article class="article-2">
+                                <div class="inner">
+
+                                    <a href="https://bit.ly/3jznN7f"
+                                       target="_blank">
+                                        <div class="thumb">
+                                            <img
+                                                src="https://webshop.net.hr/wp-content/uploads/2020/09/kn85.png"
+                                                width="186" height="119">
+                                        </div>
+                                    </a>
+                                    <div class="article-text">
+                                        <h2 class="overtitle danas">
+                                            AKCIJA!                                        </h2>
+                                        <a href="https://bit.ly/3jznN7f" target="_blank">
+                                            <h1 class="title">
+                                                Zaštitna maska KN95 (FFP2) , 5 komada                                            </h1>
+                                        </a>
+                                        <div class="prices cf">
+	                                                                                    <div class="left price"><span class="red">99 kn</span> / <span>149 kn</span></div>
+			                                                                        </div>
+                                        <p class="description">
+                                            Zadržava i blokira do 95 % čestica .                                        </p>
+                                        <a href="https://bit.ly/3jznN7f" class="btn">Kupi ovdje</a>
+                                    </div>
+
+                                </div>
+                            </article>
+                                                    <article class="article-2">
+                                <div class="inner">
+
+                                    <a href="https://bit.ly/pelene-sve"
+                                       target="_blank">
+                                        <div class="thumb">
+                                            <img
+                                                src="https://webshop.net.hr/wp-content/uploads/2020/12/Violeta-pelene-net.hr_.jpg"
+                                                width="186" height="119">
+                                        </div>
+                                    </a>
+                                    <div class="article-text">
+                                        <h2 class="overtitle danas">
+                                            AKCIJA!                                        </h2>
+                                        <a href="https://bit.ly/pelene-sve" target="_blank">
+                                            <h1 class="title">
+                                                Violeta pelene DC AIR DRY                                            </h1>
+                                        </a>
+                                        <div class="prices cf">
+	                                                                                    <div class="left price"><span class="red">69,99 kn</span> / <span>96 kn</span></div>
+			                                                                        </div>
+                                        <p class="description">
+                                            U paketu gratis Violeta vlažni toaletni papir                                        </p>
+                                        <a href="https://bit.ly/pelene-sve" class="btn">Kupi ovdje</a>
+                                    </div>
+
+                                </div>
+                            </article>
+                                                    <article class="article-2">
+                                <div class="inner">
+
+                                    <a href="https://bit.ly/38JbTFH"
+                                       target="_blank">
+                                        <div class="thumb">
+                                            <img
+                                                src="https://webshop.net.hr/wp-content/uploads/2020/11/africka-sljiva-185-140.jpg"
+                                                width="186" height="119">
+                                        </div>
+                                    </a>
+                                    <div class="article-text">
+                                        <h2 class="overtitle danas">
+                                            Novo u ponudi                                        </h2>
+                                        <a href="https://bit.ly/38JbTFH" target="_blank">
+                                            <h1 class="title">
+                                                Encian afrička šljiva – 20 kapsula                                            </h1>
+                                        </a>
+                                        <div class="prices cf">
+	                                                                                    <div class="left price"><span class="red">34 kn</span> / <span>49,99 kn</span></div>
+			                                                                        </div>
+                                        <p class="description">
+                                            DISKRETNO PAKIRANJE                                        </p>
+                                        <a href="https://bit.ly/38JbTFH" class="btn">Kupi ovdje</a>
+                                    </div>
+
+                                </div>
+                            </article>
+                                                    <article class="article-2">
+                                <div class="inner">
+
+                                    <a href="https://bit.ly/guster-robo"
+                                       target="_blank">
+                                        <div class="thumb">
+                                            <img
+                                                src="https://webshop.net.hr/wp-content/uploads/2020/12/robo-alive-net.ht_.jpg"
+                                                width="186" height="119">
+                                        </div>
+                                    </a>
+                                    <div class="article-text">
+                                        <h2 class="overtitle danas">
+                                            AKCIJA!                                        </h2>
+                                        <a href="https://bit.ly/guster-robo" target="_blank">
+                                            <h1 class="title">
+                                                Robo Alive – Gušter                                            </h1>
+                                        </a>
+                                        <div class="prices cf">
+	                                                                                    <div class="left price"><span class="red">159,00 kn</span> / <span>199,99 kn</span></div>
+			                                                                        </div>
+                                        <p class="description">
+                                             Robotička životinja pružit će vašem djetetu puno zabave.                                        </p>
+                                        <a href="https://bit.ly/guster-robo" class="btn">Kupi ovdje</a>
+                                    </div>
+
+                                </div>
+                            </article>
+                                            </div>
+                </div>
+                					<div class="banner banner-size3">
+						      <div id='nethr_desktop_floater'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_floater');
+            });
+          </script>
+      </div>
+    					</div>
+						</div>
+
+					<div class="wallpaper fixed wallpaper-left">
+						<div class="banner">
+							      <div id='nethr_desktop_wallpaper_left'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_wallpaper_left');
+            });
+          </script>
+      </div>
+    						</div>
+					</div>
+										<div class="wallpaper fixed wallpaper-right">
+						<div class="banner">
+							      <div id='nethr_desktop_wallpaper_right'>
+          <script>
+            googletag.cmd.push(function () {
+              googletag.display('nethr_desktop_wallpaper_right');
+            });
+          </script>
+      </div>
+    						</div>
+					</div>
+					
+</div> <!-- END Content container -->
+
+<footer>
+
+				<div class="footer-categories">
+				<div class="container cf">
+												<div class="category-container">
+								<a href="https://net.hr/kategorija/danas/">
+									<h4>
+										Vijesti									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/danas/crna-kronika/">
+											Crna kronika										</a>
+																				<a href="https://net.hr/kategorija/danas/hrvatska/">
+											Hrvatska										</a>
+																				<a href="https://net.hr/kategorija/danas/kultura/">
+											Kultura										</a>
+																				<a href="https://net.hr/kategorija/danas/novac/">
+											Novac										</a>
+																				<a href="https://net.hr/kategorija/danas/svijet/">
+											Svijet										</a>
+																				<a href="https://net.hr/kategorija/danas/znanost/">
+											Znanost										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/sport/">
+									<h4>
+										Sport									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/sport/hokej/">
+											Hokej										</a>
+																				<a href="https://net.hr/kategorija/sport/klub-boraca/">
+											Klub boraca										</a>
+																				<a href="https://net.hr/kategorija/sport/kosarka/">
+											Košarka										</a>
+																				<a href="https://net.hr/kategorija/sport/na-rubu-sporta/">
+											Na rubu sporta										</a>
+																				<a href="https://net.hr/kategorija/sport/nogomet/">
+											Nogomet										</a>
+																				<a href="https://net.hr/kategorija/sport/oi-2016/">
+											OI										</a>
+																				<a href="https://net.hr/kategorija/sport/ostali-sportovi/">
+											Ostali sportovi										</a>
+																				<a href="https://net.hr/kategorija/sport/rukomet/">
+											Rukomet										</a>
+																				<a href="https://net.hr/kategorija/sport/skijanje/">
+											Skijanje										</a>
+																				<a href="https://net.hr/kategorija/sport/tenis/">
+											Tenis										</a>
+										                                    <a href="https://www.rezultati.com/" target="_blank">
+                                        Rezultati.com
+                                    </a>
+																</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/webcafe/">
+									<h4>
+										Webcafe									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/webcafe/astronet/">
+											Astronet										</a>
+																				<a href="https://net.hr/kategorija/webcafe/cura-dana/">
+											Cura dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/decko-dana/">
+											Dečko dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/dnevni-horoskop/">
+											Dnevni horoskop										</a>
+																				<a href="https://net.hr/kategorija/webcafe/fora-dana/">
+											Fora dana										</a>
+																				<a href="https://net.hr/kategorija/webcafe/forwarduse/">
+											Forwarduše										</a>
+																				<a href="https://net.hr/kategorija/webcafe/komnetar/">
+											Komnetar										</a>
+																				<a href="https://net.hr/kategorija/webcafe/overkloking/">
+											Overkloking										</a>
+																				<a href="https://net.hr/kategorija/webcafe/planet-x/">
+											Planet X										</a>
+																				<a href="https://net.hr/kategorija/webcafe/svastara/">
+											Svaštara										</a>
+																				<a href="https://net.hr/kategorija/webcafe/vic-dana/">
+											Vic dana										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/hot/">
+									<h4>
+										Hot									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/hot/lijepenase/">
+											#lijepenase										</a>
+																				<a href="https://net.hr/kategorija/hot/film/">
+											Film										</a>
+																				<a href="https://net.hr/kategorija/hot/glazba/">
+											Glazba										</a>
+																				<a href="https://net.hr/kategorija/hot/sexy/">
+											Sexy										</a>
+																				<a href="https://net.hr/kategorija/hot/tv/">
+											TV										</a>
+																				<a href="https://net.hr/kategorija/hot/zvijezde/">
+											Zvijezde										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/magazin/">
+									<h4>
+										Magazin									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/magazin/brakveze/">
+											Brak&amp;veze										</a>
+																				<a href="https://net.hr/kategorija/magazin/domvrt/">
+											Dom&amp;vrt										</a>
+																				<a href="https://net.hr/kategorija/magazin/hotspots/">
+											HotSpots										</a>
+																				<a href="https://net.hr/kategorija/magazin/kuhinja/">
+											Kuhinja										</a>
+																				<a href="https://net.hr/kategorija/magazin/kvizovi/">
+											Kvizovi										</a>
+																				<a href="https://net.hr/kategorija/magazin/lijepi_nasi/">
+											Lijepi naši										</a>
+																				<a href="https://net.hr/kategorija/magazin/ljepota/">
+											Ljepota										</a>
+																				<a href="https://net.hr/kategorija/magazin/ljubimci/">
+											Ljubimci										</a>
+																				<a href="https://net.hr/kategorija/magazin/moda/">
+											Moda										</a>
+																				<a href="https://net.hr/kategorija/magazin/muffini/">
+											Muffini										</a>
+																				<a href="https://net.hr/kategorija/magazin/putovanja/">
+											Putovanja										</a>
+																				<a href="https://net.hr/kategorija/magazin/roditeljstvo/">
+											Roditeljstvo										</a>
+																				<a href="https://net.hr/kategorija/magazin/zdravlje/">
+											Zdravlje										</a>
+																				<a href="https://net.hr/kategorija/magazin/zdravlje-i-ljepota/">
+											Zdravlje i ljepota										</a>
+																				<a href="https://net.hr/kategorija/magazin/zivotne-ispovijesti/">
+											Životne ispovijesti										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/tehnoklik/">
+									<h4>
+										Tehnoklik									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/tehnoklik/gadgeti/">
+											Gadgeti										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/mobile/">
+											Mobile										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/technobiz/">
+											Technobiz										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/vijesti-tehnoklik/">
+											Vijesti										</a>
+																				<a href="https://net.hr/kategorija/tehnoklik/web-social/">
+											Web &amp; social										</a>
+																	</div>
+													<div class="category-container">
+								<a href="https://net.hr/kategorija/auto/">
+									<h4>
+										Auto									</h4>
+								</a>
+																		<a href="https://net.hr/kategorija/auto/automoto/">
+											Automoto										</a>
+																				<a href="https://net.hr/kategorija/auto/automoto-sport/">
+											automoto-sport										</a>
+																				<a href="https://net.hr/kategorija/auto/bicikli/">
+											Bicikli										</a>
+																				<a href="https://net.hr/kategorija/auto/funmobil/">
+											Funmobil										</a>
+																				<a href="https://net.hr/kategorija/auto/nova-vozila/">
+											Nova vozila										</a>
+																				<a href="https://net.hr/kategorija/auto/techmobil/">
+											Techmobil										</a>
+																				<a href="https://net.hr/kategorija/auto/vijesti/">
+											Vijesti										</a>
+																	</div>
+										</div>
+			</div>
+			
+	<div class="footer-bottom cf">
+
+		<div class="container cf">
+			<a href="https://net.hr">
+				<div class="logo">
+					<h1>Net.hr</h1>
+				</div>
+			</a>
+			<a href="https://www.rtl.hr">
+				<div class="logortl">
+					<h1>rtl.hr</h1>
+				</div>
+			</a>
+
+			<div class="meta">
+				Sva prava pridržana.
+								<a href="https://net.hr/uvjeti_koristenja">Uvjeti korištenja</a> |
+				<a href="https://net.hr/marketing">Marketing</a> |
+				<a href="https://net.hr/impressum">Impressum</a> |
+				<a href="mailto:vijesti@portal.net.hr?subject=Net.hr - kontakt">Kontakt</a> |
+				<a href="https://net.hr/danas/hrvatska/od-ponoci-poskupjelo-gorivo-prosjecni-spremnik-benzina-skuplji-je-za-dvije-kune/?ak_action=accept_mobile">Mobilna verzija</a>
+			</div>
+
+			<div class="wp-vip">
+				<i class="fa fa-wordpress"></i>
+				Powered by <a href="https://wpvip.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit&#038;utm_term=net.hr" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>			</div>
+		</div>
+	</div>
+
+</footer>
+
+<!-- /1092744/nethr/nethr_desktop_scripts -->
+<div id='div-gpt-ad-1539078936758-0'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('nethr_desktop_scripts'); });
+    </script>
+</div>
+
+</div> <!-- END Main container -->
+
+	<a href="https://net.hr" id="back_home">
+		<i class="fa  fa-arrow-left"></i> Povratak na Net.hr
+	</a>
+
+<div id="fb-root"></div>
+			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/hr_HR/sdk.js#xfbml=1&appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+			<script>
+			document.body.addEventListener( 'post-load', function() {
+				if ( 'undefined' !== typeof FB ) {
+					FB.XFBML.parse();
+				}
+			} );
+			</script>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<script src='//player.h-cdn.com/loader.js?customer=rtl_hr' id='nethr-hola-js'></script>
+<script id='nethr-script-js-extra'>
+var nethrVars = {"ajaxurl":"https:\/\/net.hr\/wp-admin\/admin-ajax.php"};
+</script>
+<script type='text/javascript' src='https://net.hr/_static/??-eJyNjcEOwjAMQ3+ILgyNIQ6Ibwlt2NKt6dSmIPh6igQIceJo+9mG62JsFCVR0JECZUCXGJVtIMdohHRM4DNUZ6LU+LyCvzvnIlY5Sv6thWKWuQwsGTzpgnYy+2YDFxIXE2DRGFDr3ied8X4zHHCoZznZ5/iX1QSW9wWLnYurWEWqpHAi98qP4dD2613X92239Q+Ralw7'></script>
+<script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=5.6' async='async' id='remote_sdk-js'></script>
+<script id='sharing-js-js-extra'>
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script src='https://net.hr/wp-content/mu-plugins/jetpack-9.2/_inc/build/sharedaddy/sharing.min.js?ver=9.2.1' id='sharing-js-js'></script>
+<script id='sharing-js-js-after'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+			<script id="xclaim_script" type="text/javascript" language="javascript">
+				(function () {
+					function async_load() {
+						var s = document.createElement('script');
+						s.type = 'text/javascript';
+						s.async = true;
+						s.src ='https://hr-engine.xclaimwords.net/script.aspx?partnerid=200166';
+						var x = document.getElementsByTagName('script')[0];
+						x.parentNode.insertBefore(s, x);
+					}
+
+					if (window.attachEvent)
+						window.attachEvent('onload', async_load);
+					else
+						window.addEventListener('load', async_load, false);
+				})();
+			</script>
+			<script>
+				function onXClaimSettingsLoaded(){}
+			</script>
+			<script type='text/javascript' src='https://stats.wp.com/e-202101.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.2.1',blog:'174083121',post:'2462766',tz:'1',srv:'net.hr'} ]);
+	_stq.push([ 'clickTrackerInit', '174083121', '2462766' ]);
+</script>
+
 </body>
 </html>
