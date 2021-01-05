@@ -99,7 +99,7 @@ print '
 	<p>Autoplin 4,68kn</p>
 	<p>Lož ulje 3,96kn</p>
 	<p>Plavi dizel 4,20kn</p>
-	<p>Social media:<br>
+	<p>Društvene mreže:<br>
 		<a href="https://www.linkedin.com/in/tim-berners-lee-b41808ab/" target="_blank"><img src="img/linkedin.svg" alt="Linkedin" title="Linkedin" style="width:24px; margin-top:0.4em"></a>
 		<a href="https://twitter.com/timberners_lee" target="_blank"><img src="img/twitter.svg" alt="Twitter" title="Twitter" style="width:24px; margin-top:0.4em"></a>
 		<a href="https://plus.google.com/113372414904624897851" target="_blank"><img src="img/google+.svg" alt="Google+" title="Google+" style="width:24px; margin-top:0.4em"></a>

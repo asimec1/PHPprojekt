@@ -45,10 +45,12 @@
 		<div class="hero-image" style="height: 200px;"></div>
 		<nav>
 			<ul>
-			  <li><a href="index.html">Home</a></li>
-			  <li><a href="news.html">News</a></li>
-			  <li><a href="contact.html">Contact</a></li>
-			  <li><a href="about-us.html">About</a></li>
+			<li><a href="index.php">Početna</a></li>
+		  	<li><a href="news.html">Vijesti</a></li>
+		  	<li><a href="contact.php">Kontakt</a></li>
+		  	<li><a href="about-us.php">O nama</a></li>
+		  	<li><a href="register.php">Registracija</a></li>
+		  	<li><a href="signin.php">Prijava</a></li>
 			</ul>
 		</nav>
 	</header>

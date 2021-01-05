@@ -64,7 +64,7 @@
 	<h1>Prijava</h1>
 	<div id="signin">';
 	
-	if ($_POST['_action_'] == FALSE) {
+	if ($_POST == FALSE) {
 		print '
 		<form action="" name="myForm" id="myForm" method="POST">
 			<input type="hidden" id="_action_" name="_action_" value="TRUE">

@@ -63,7 +63,7 @@
 	<h1>Registracija</h1>
 	<div id="register">';
 	
-	if ($_POST['_action_'] == FALSE) {
+	if ($_POST == FALSE) {
 		print '
 		<form action="" id="registration_form" name="registration_form" method="POST">
 			<input type="hidden" id="_action_" name="_action_" value="TRUE">
@@ -96,7 +96,7 @@
 			<input type="submit" value="Submit">
 		</form>';
 	}
-	else if ($_POST['_action_'] == TRUE) {
+	else if ($_POST == TRUE) {
 		
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE email='" .  $_POST['email'] . "'";
