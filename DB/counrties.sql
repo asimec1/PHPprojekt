@@ -288,37 +288,24 @@ INSERT INTO `counrties` (`id`, `country_code`, `country_name`) VALUES
 (245, 'ZW', 'Zimbabwe');
 COMMIT;
 --
--- Database: `users`
+-- Indexes for dumped tables
 --
 
--- --------------------------------------------------------
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Table structure for table `users`
+-- AUTO_INCREMENT for dumped tables
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `country` char(2) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `archive` enum('Y','N') COLLATE utf8mb4_croatian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_croatian_ci;
-
 --
--- Dumping data for table `users`
+-- AUTO_INCREMENT for table `countries`
 --
-
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country`, `date`, `archive`) VALUES
-(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'vedran', 'Vedran96', 'HR', '2021-01-04 13:14:55', 'Y'),
-(0, '', '', '', '', '', '', '0000-00-00 00:00:00', 'Y'),
-(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'vedran', 'Vedran96', 'HR', '2021-01-04 10:18:43', 'Y');
-COMMIT;
-
+ALTER TABLE `countries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
