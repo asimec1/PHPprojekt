@@ -1,6 +1,11 @@
 <?php
 	
 
+	# Stop Hacking attempt
+	if(!defined('__APP__')) {
+		die("Hacking attempt");
+	}
+	
 	# Connect to MySQL database
-	//$MySQL = mysqli_connect("localhost","root","","countries") or die('Error connecting to MySQL server.');
+	$MySQL = mysqli_connect("localhost","root","","users") or die('Error connecting to MySQL server.');
 	
