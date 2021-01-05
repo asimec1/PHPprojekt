@@ -50,7 +50,7 @@
 	<nav>
 		<ul>
 		  <li><a href="index.php">Početna</a></li>
-		  <li><a href="news.html">Novosti</a></li>
+		  <li><a href="news.html">Vijesti</a></li>
 		  <li><a href="contact.php">Kontakt</a></li>
 		  <li><a href="about-us.php">O nama</a></li>
 		  <li><a href="register.php">Registracija</a></li>

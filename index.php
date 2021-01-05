@@ -32,7 +32,7 @@ print '
 	<nav>
 		<ul>
 		  <li><a href="index.php">Početna</a></li>
-		  <li><a href="news.html">Novosti</a></li>
+		  <li><a href="news.html">Vijesti</a></li>
 		  <li><a href="contact.php">Kontakt</a></li>
 		  <li><a href="about-us.php">O nama</a></li>
 		  <li><a href="register.php">Registracija</a></li>
@@ -93,12 +93,12 @@ print '
 		<title>Praćenje cijene goriva</title>
 	
 	<h3>Aktualne cijene</h3>
-	<p>Eurosuper 95 9,09kn</p>
-	<p>Eurosuper 100 9,74kn</p>
-	<p>Eurodizel 8,86kn</p>
-	<p>Autoplin 4,67kn</p>
+	<p>Eurosuper 95 9,14kn</p>
+	<p>Eurosuper 100 9,78kn</p>
+	<p>Eurodizel 8,88kn</p>
+	<p>Autoplin 4,68kn</p>
 	<p>Lož ulje 3,96kn</p>
-	<p>Plavi dizel 4,18kn</p>
+	<p>Plavi dizel 4,20kn</p>
 	<p>Social media:<br>
 		<a href="https://www.linkedin.com/in/tim-berners-lee-b41808ab/" target="_blank"><img src="img/linkedin.svg" alt="Linkedin" title="Linkedin" style="width:24px; margin-top:0.4em"></a>
 		<a href="https://twitter.com/timberners_lee" target="_blank"><img src="img/twitter.svg" alt="Twitter" title="Twitter" style="width:24px; margin-top:0.4em"></a>

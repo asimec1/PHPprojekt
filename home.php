@@ -7,12 +7,12 @@
 		<figcaption>Novosti</figcaption>
 	</figure>
 	<h3>Aktualne cijene</h3>
-	<p>Eurosuper 95 9,09kn</p>
-	<p>Eurosuper 100 9,74kn</p>
-	<p>Eurodizel 8,86kn</p>
-	<p>Autoplin 4,67kn</p>
+	<p>Eurosuper 95 9,14kn</p>
+	<p>Eurosuper 100 9,78kn</p>
+	<p>Eurodizel 8,88kn</p>
+	<p>Autoplin 4,68kn</p>
 	<p>Lož ulje 3,96kn</p>
-	<p>Plavi dizel 4,18kn</p>
+	<p>Plavi dizel 4,20kn</p>
 	
 	</p>';
 ?>
