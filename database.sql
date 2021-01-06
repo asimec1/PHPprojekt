@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2021 at 02:34 PM
+-- Generation Time: Jan 06, 2021 at 02:44 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,29 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `php`
+-- Database: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `counrties`
+-- Table structure for table `countries`
 --
 
-CREATE TABLE `counrties` (
+CREATE TABLE `countries` (
   `id` int(11) NOT NULL,
-  `country_code` varchar(2) NOT NULL DEFAULT '''',
-  `country_name` varchar(100) NOT NULL DEFAULT ''''
+  `country_id` varchar(2) NOT NULL DEFAULT '',
+  `country_name` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `counrties`
+-- Dumping data for table `countries`
 --
 
-INSERT INTO `counrties` (`id`, `country_code`, `country_name`) VALUES
-(0, '', ''),
-(0, '', ''),
-(0, '\'', '\''),
+INSERT INTO `countries` (`id`, `country_id`, `country_name`) VALUES
 (1, 'AF', 'Afghanistan'),
 (2, 'AL', 'Albania'),
 (3, 'DZ', 'Algeria'),
@@ -155,12 +152,12 @@ INSERT INTO `counrties` (`id`, `country_code`, `country_name`) VALUES
 (112, 'KZ', 'Kazakhstan'),
 (113, 'KE', 'Kenya'),
 (114, 'KI', 'Kiribati'),
-(115, 'KP', 'Korea, Democratic People s Republic of'),
+(115, 'KP', 'Korea, Democratic People\'s Republic of'),
 (116, 'KR', 'Korea, Republic of'),
 (117, 'XK', 'Kosovo'),
 (118, 'KW', 'Kuwait'),
 (119, 'KG', 'Kyrgyzstan'),
-(120, 'LA', 'Lao People s Democratic Republic'),
+(120, 'LA', 'Lao People\'s Democratic Republic'),
 (121, 'LV', 'Latvia'),
 (122, 'LB', 'Lebanon'),
 (123, 'LS', 'Lesotho'),
@@ -286,15 +283,75 @@ INSERT INTO `counrties` (`id`, `country_code`, `country_name`) VALUES
 (243, 'ZR', 'Zaire'),
 (244, 'ZM', 'Zambia'),
 (245, 'ZW', 'Zimbabwe');
-COMMIT;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `picture` varchar(255) NOT NULL,
+  `archive` enum('Y','N') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`) VALUES
+(1, 'Utorak donosi nove promjene cijene goriva', 'Prema neslužbenim podacima web-stranice Cijene goriva, spremnik benzina bit će od utorka skuplji za 4,5 kuna, a onaj dizela trebao bi biti jeftiniji za dvije kune. Najavljen je i porast cijene LPG-a, i to za tri kune po spremniku.\r\nPrema cijenama objavljenim na stranici Ministarstva gospodarstva u ponedjeljak je najjeftiniji Eurosuper 95 koštao 9,53 kn po litri, cijena Eurosupera 98 je 10,91, Eurosuper 100 košta 10,29 kuna po litri. Najniža cijena Eurodizela je 9,49 kuna, a autoplina 4,9 kuna.', '2021-01-06 13:35:24', 'news/news-3.jpg', 'N'),
+(2, 'Od ponoći nove cijene goriva', 'Od ponoći će na benzinskim pumpama vrijediti nove cijene goriva.\r\nPrema informacijama portala cijenegoriva.info, spremnik od 50 litara benzina trebao bi biti skuplji za dvije kune, isti takav spremnik dizela trebao bi poskupjeti za jednu kunu, a prosječni spremnik LPG-a trebao bi poskupjeti za 5,5 kuna.', '2021-01-06 13:35:32', 'news/news-2.jpeg', 'N'),
+(3, 'OD PONOĆI SU U HRVATSKOJ NARASLE CIJENE GORIVA: Prosječni spremnik benzina skuplji je za dvije kune', 'Spremnik od 50 litara benzina od ponoći je u prosjeku skuplji za dvije kune\r\nUtorkom se u Hrvatskoj mijenja cijena goriva, a od ponoći je ono poskupjelo u odnosu na prošli tjedan. Kako piše portal cijenegoriva.info, spremnik od 50 litara benzina (Eurosupera) u prosjeku je skuplji za dvije kune.\r\nPoskupjelo je i dizelsko gorivo pa je prosječna cijena spremnika dizela viša za jednu kunu u odnosu na prošlotjednu. Najviše je poskupio autoplin. Prosječni spremnik LPG-a skuplji je za 5,5 kuna.\r\n\r\n', '2021-01-06 13:35:39', 'news/news-1.jpg', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `country` char(2) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `archive` enum('Y','N') NOT NULL DEFAULT 'Y'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `country`, `date`, `archive`) VALUES
+(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', '*CD0C9370984D6EFEF090301B4DD9B8B8FAD2DB5E', 'HR', '2021-01-06 13:43:57', 'Y');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `counrties`
+-- Indexes for table `countries`
 --
-ALTER TABLE `counrties`
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -302,10 +359,24 @@ ALTER TABLE `counrties`
 --
 
 --
--- AUTO_INCREMENT for table `counrties`
+-- AUTO_INCREMENT for table `countries`
 --
-ALTER TABLE `counrties`
+ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

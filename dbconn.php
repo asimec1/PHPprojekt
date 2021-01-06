@@ -7,7 +7,7 @@
 	}
 	
 	# Connect to MySQL database
-	$MySQL = mysqli_connect("localhost","root","","php") or die('Error connecting to MySQL server.');
+	$MySQL = mysqli_connect("localhost","root","","database") or die('Error connecting to MySQL server.');
 
 	
 

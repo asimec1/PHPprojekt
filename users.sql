@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2021 at 10:57 AM
+-- Generation Time: Jan 06, 2021 at 02:45 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `php`
+-- Database: `database`
 --
 
 -- --------------------------------------------------------
@@ -43,9 +43,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `country`, `date`, `archive`) VALUES
-(0, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'f2883d7c92bb4a8368c791b519032930', 'HR', '2021-01-06 09:54:26', 'Y'),
-(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'f2883d7c92bb4a8368c791b519032930', 'HR', '2021-01-06 09:55:49', 'Y');
-COMMIT;
+(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', '*CD0C9370984D6EFEF090301B4DD9B8B8FAD2DB5E', 'HR', '2021-01-06 13:43:57', 'Y');
+
 --
 -- Indexes for dumped tables
 --
@@ -64,7 +63,9 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

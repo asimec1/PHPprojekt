@@ -37,7 +37,7 @@ print '
 		  <li><a href="about-us.php">O nama</a></li>
 		  <li><a href="register.php">Registracija</a></li>
 		  <li><a href="signin.php">Prijava</a></li>
-		  <li><a href="admin.php">Admin</a></li>
+		 
 		  
 		</ul>
 		</nav>
