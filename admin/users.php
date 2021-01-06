@@ -80,11 +80,11 @@
 			<label for="country">Country</label>
 			<select name="country" id="country">
 				<option value="">molimo odaberite</option>';
-				#Select all countries from database webprog, table countries
+				#Select all countries from database database, table countries
 				$_query  = "SELECT * FROM countries";
 				$_result = @mysqli_query($MySQL, $_query);
 				while($_row = @mysqli_fetch_array($_result)) {
-					print '<option value="' . $_row['country_code'] . '"';
+					print '<option value="' . $_row['country_id'] . '"';
 					if ($row['country'] == $_row['country_id']) { print ' selected'; }
 					print '>' . $_row['country_name'] . '</option>';
 				}
