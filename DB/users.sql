@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2021 at 02:17 PM
+-- Generation Time: Jan 06, 2021 at 10:57 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `users`
+-- Database: `php`
 --
 
 -- --------------------------------------------------------
@@ -29,27 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `lastname` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `country` char(2) COLLATE utf8mb4_croatian_ci NOT NULL,
-  `date`  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `archive` enum('Y','N') COLLATE utf8mb4_croatian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_croatian_ci;
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `country` char(2) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `archive` enum('Y','N') NOT NULL DEFAULT 'Y'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country`, `date`, `archive`) VALUES
-(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'vedran', 'Vedran96', 'HR', '2021-01-04 13:14:55', 'Y'),
-(0, '', '', '', '', '', '', '0000-00-00 00:00:00', 'Y'),
-(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'vedran', 'Vedran96', 'HR', '2021-01-04 10:18:43', 'Y');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `country`, `date`, `archive`) VALUES
+(0, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'f2883d7c92bb4a8368c791b519032930', 'HR', '2021-01-06 09:54:26', 'Y'),
+(1, 'Vedran', 'Mihalic', 'vedranmihalic96@gmail.com', 'f2883d7c92bb4a8368c791b519032930', 'HR', '2021-01-06 09:55:49', 'Y');
 COMMIT;
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -68,8 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
