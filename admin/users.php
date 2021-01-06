@@ -1,4 +1,4 @@
-<?php 
+<<?php 
 	
 	# Update user profile
 	if (isset($_POST['edit']) && $_POST['_action_'] == 'TRUE') {
@@ -44,7 +44,7 @@
 		<p><b>Last name:</b> ' . $row['lastname'] . '</p>
 		<p><b>Username:</b> ' . $row['username'] . '</p>';
 		$_query  = "SELECT * FROM countries";
-		$_query .= " WHERE country_code='" . $row['country'] . "'";
+		$_query .= " WHERE country_id='" . $row['country'] . "'";
 		$_result = @mysqli_query($MySQL, $_query);
 		$_row = @mysqli_fetch_array($_result);
 		print '
@@ -85,7 +85,7 @@
 				$_result = @mysqli_query($MySQL, $_query);
 				while($_row = @mysqli_fetch_array($_result)) {
 					print '<option value="' . $_row['country_code'] . '"';
-					if ($row['country'] == $_row['country_code']) { print ' selected'; }
+					if ($row['country'] == $_row['country_id']) { print ' selected'; }
 					print '>' . $_row['country_name'] . '</option>';
 				}
 			print '

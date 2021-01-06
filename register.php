@@ -72,7 +72,7 @@
 			<label for="fname">First Name *</label>
 			<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 			<label for="lname">Last Name *</label>
-			<input type="text" id="lname" name="lastname" placeholder="Your last natme.." required>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 				
 			<label for="email">Your E-mail *</label>
 			<input type="email" id="email" name="email" placeholder="Your e-mail.." required>
@@ -85,12 +85,12 @@
 			<input type="password" id="password" name="password" placeholder="Password.." pattern=".{4,}" required>
 			<label for="country">Country:</label>
 			<select name="country" id="country">
-				<option value="">molimo odaberite</option>';
+				<option value="">select</option>';
 				#Select all countries from database database, table countries
 				$query  = "SELECT * FROM countries";
 				$result = @mysqli_query($MySQL, $query);
 				while($row = @mysqli_fetch_array($result)) {
-					print '<option value="' . $row['country_code'] . '">' . $row['country_name'] . '</option>';
+					print '<option value="' . $row['country_id'] . '">' . $row['country_name'] . '</option>';
 				}
 			print '
 			</select>
@@ -105,7 +105,7 @@
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
-		if ($row['email'] == '' || $row['username'] == '') {
+		//if ($row['email'] == '' || $row['username'] == '') {
 			# password_hash https://secure.php.net/manual/en/function.password-hash.php
 			# password_hash() creates a new password hash using a strong one-way hashing algorithm
 			$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
@@ -122,7 +122,7 @@
 		else {
 			echo '<p>User with this email or username already exist!</p>';
 		}
-	}
+	//}
 	print '
 	</main>
 	<footer>

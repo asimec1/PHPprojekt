@@ -59,19 +59,21 @@
 		</ul>
 		</nav>
 	</header>
-	<main>
+	<main>';
 
-	<h1>Prijava</h1>
+	
+	print '
+	<h1>Sign In form</h1>
 	<div id="signin">';
 	
-	if ($_POST == FALSE) {
+	if ($_POST['_action_'] == FALSE) {
 		print '
 		<form action="" name="myForm" id="myForm" method="POST">
 			<input type="hidden" id="_action_" name="_action_" value="TRUE">
-			<label for="username">Korisničko ime:*</label>
+			<label for="username">Username:*</label>
 			<input type="text" id="username" name="username" value="" pattern=".{5,10}" required>
 									
-			<label for="password">Lozinka:*</label>
+			<label for="password">Password:*</label>
 			<input type="password" id="password" name="password" value="" pattern=".{4,}" required>
 									
 			<input type="submit" value="Submit">
@@ -81,6 +83,7 @@
 		
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE username='" .  $_POST['username'] . "'";
+		$query .= " AND archive='N'";
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
