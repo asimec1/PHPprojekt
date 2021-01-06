@@ -68,7 +68,7 @@
 				<label for="lname">Prezime *</label>
 				<input type="text" id="lname" name="lastname" placeholder="Vaše prezime.." required>
 				
-				<label for="lname">E-mail adresa *</label>
+				<label for="email">E-mail adresa *</label>
 				<input type="email" id="email" name="email" placeholder="Vaša e-mail adresa.." required>
 
 				<label for="country">Država</label>

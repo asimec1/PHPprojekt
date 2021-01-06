@@ -155,12 +155,12 @@ INSERT INTO `counrties` (`id`, `country_code`, `country_name`) VALUES
 (112, 'KZ', 'Kazakhstan'),
 (113, 'KE', 'Kenya'),
 (114, 'KI', 'Kiribati'),
-(115, 'KP', 'Korea, Democratic People\'s Republic of'),
+(115, 'KP', 'Korea, Democratic People s Republic of'),
 (116, 'KR', 'Korea, Republic of'),
 (117, 'XK', 'Kosovo'),
 (118, 'KW', 'Kuwait'),
 (119, 'KG', 'Kyrgyzstan'),
-(120, 'LA', 'Lao People\'s Democratic Republic'),
+(120, 'LA', 'Lao People s Democratic Republic'),
 (121, 'LV', 'Latvia'),
 (122, 'LB', 'Lebanon'),
 (123, 'LS', 'Lesotho'),
@@ -292,9 +292,9 @@ COMMIT;
 --
 
 --
--- Indexes for table `countries`
+-- Indexes for table `counrties`
 --
-ALTER TABLE `countries`
+ALTER TABLE `counrties`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -302,9 +302,9 @@ ALTER TABLE `countries`
 --
 
 --
--- AUTO_INCREMENT for table `countries`
+-- AUTO_INCREMENT for table `counrties`
 --
-ALTER TABLE `countries`
+ALTER TABLE `counrties`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
